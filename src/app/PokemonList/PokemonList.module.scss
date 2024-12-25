@@ -1,0 +1,77 @@
+.pokemon-wrapper {
+  overflow-x: auto;
+  padding: 1rem;
+
+  &__header {
+    display: inline-flex;
+    padding: 1rem;
+  }
+
+  &__list {
+    display: flex; /* Layout the list items in a row */
+    gap: 10px; /* Add space between list items */
+    padding: 0;
+    margin: 0;
+    list-style: none; /* Remove default list styling */
+    white-space: nowrap; /* Prevent items from wrapping to the next line */
+  }
+
+  &__list-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center image and name */
+    justify-content: center;
+    text-align: center; /* Center align text under the image */
+    gap: 0.5rem;
+    margin: 0;
+    min-width: 320px;
+    height: 320px;
+
+    $sizes: (1: 64px, 2: 128px, 3: 194px);
+
+    @each $index, $size in $sizes {
+      &:nth-child(#{$index}) {
+        img {
+          width: auto;
+          height: $size;
+        }
+      }
+    }
+  }
+
+  &__toggle-wrapper {
+    width: 100%;
+    display: flex;
+  }
+
+  &__toggle {
+    padding: 1rem;
+    background: transparent;
+    border: 1px solid white;
+    color: #fff;
+  }
+
+  &::-webkit-scrollbar {
+    height: 8px; /* Customize scrollbar height */
+    background: #fff;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: #ff0702; /* Thumb color */
+    border-radius: 2.5px; /* Rounded scrollbar corners */
+    transition: background-color 0.5s ease-in-out, border-radius 0.5s ease-in-out;
+  }
+
+  &::-webkit-scrollbar-thumb:hover {
+    background: #555; /* Thumb hover color */
+    cursor: pointer;
+    border-radius: 0; /* Changes border radius on hover */
+  }
+
+  &::-webkit-scrollbar-thumb:active {
+    background: #333; /* Active color */
+    border-radius: 0; /* Retain flat corners */
+  }
+
+
+}
