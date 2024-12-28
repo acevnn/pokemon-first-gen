@@ -1,4 +1,4 @@
-import { Pokemon, SpriteType } from "@/types/pokemonTypes";
+import { PokemonFetch, SpriteType } from "@/types/pokemonTypes";
 
 export const fetchPokemonData = async (spriteType: SpriteType) => {
   const res = await fetch("https://pokeapi.co/api/v2/pokemon?limit=151");
@@ -32,11 +32,13 @@ export const fetchPokemonData = async (spriteType: SpriteType) => {
 };
 
 export const fetchBasicPokemonData = async () => {
-  const res = await fetch("https://pokeapi.co/api/v2/pokemon?limit=151");
+  const res = await fetch("https://pokeapi.co/api/v2/pokemon?limit=151", {
+    cache: "force-cache",
+  });
   const data = await res.json();
 
   return await Promise.all(
-    data.results.map(async (pokemon: Pokemon) => {
+    data.results.map(async (pokemon: PokemonFetch) => {
       try {
         const detailRes = await fetch(pokemon.url);
         const detailData = await detailRes.json();
@@ -62,8 +64,4 @@ export const fetchEvolutionChain = async (pokemonId: number) => {
 
   const evolutionRes = await fetch(evolutionChainUrl);
   const evolutionData = await evolutionRes.json();
-
-  console.log("tihs is it", evolutionData.chain.evolves_to[0]);
 };
-
-fetchEvolutionChain(2);
