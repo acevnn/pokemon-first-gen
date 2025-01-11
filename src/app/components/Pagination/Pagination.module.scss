@@ -7,6 +7,7 @@
     display: flex;
     align-items: center;
     gap: 1rem;
+    list-style: none;
   }
 
   &__item {
@@ -14,24 +15,20 @@
     justify-content: center;
     align-items: center;
 
+
     &--active {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      width: 2rem;
-      height: 2rem;
-      border: 1px solid #eaeaea;
-      border-radius: 0.5rem;
-      cursor: pointer;
-      background-color: red;
+      button {
+        background-color: #e92929;
+      }
     }
   }
 
   &__link {
     width: 2rem;
     height: 2rem;
-    border: 1px solid #eaeaea;
     border-radius: 0.5rem;
     cursor: pointer;
+    border: none;
+
   }
 }

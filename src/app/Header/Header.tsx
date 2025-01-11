@@ -4,17 +4,18 @@ import React from "react";
 import Link from "next/link";
 import "./Header.module.scss";
 import { useHeader } from "@/app/Header/Header.hooks";
+import Image from "next/image";
+import pokeLogo from "@/assets/Images/pokemon-logo.png";
+import pokeText from "@/assets/Images/poke-text.png";
+import { IconArrowLeft } from "@/assets/Icons/Search";
 
 function Header() {
   const { classes } = useHeader();
   return (
     <header className={classes.header}>
       <div className={classes.headerLogo}>
-        <img
-          src="https://img.icons8.com/color/48/000000/pokeball.png"
-          alt="Pokéball"
-        />
-        <h1>Pokedex</h1>
+        <Image width={48} height={48} src={pokeLogo} alt="Pokéball" />
+        <Image width={128} height={48} src={pokeText} alt="Pokéheader" />
       </div>
 
       {/* Navigation Links */}
@@ -26,7 +27,8 @@ function Header() {
       </nav>
 
       {/* Search Bar */}
-      <div className="search-bar">
+      <div className={classes.headerSearch}>
+        <IconArrowLeft />
         <input
           type="text"
           placeholder="Search Pokémon..."

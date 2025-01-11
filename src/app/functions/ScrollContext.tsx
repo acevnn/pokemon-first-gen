@@ -2,11 +2,9 @@
 
 import React, { createContext, RefObject, useContext, useRef } from "react";
 
-// Create the context with an explicit type that allows `null`
 const ScrollContext = createContext<RefObject<HTMLUListElement> | null>(null);
 
 export const ScrollProvider = ({ children }: { children: React.ReactNode }) => {
-  // Explicitly define the type for useRef to match the context type
   const scrollableRef = useRef<HTMLUListElement>(
     null,
   ) as RefObject<HTMLUListElement>;
@@ -18,7 +16,6 @@ export const ScrollProvider = ({ children }: { children: React.ReactNode }) => {
   );
 };
 
-// Custom hook to access the ScrollContext
 export const useScrollContext = () => {
   const context = useContext(ScrollContext);
   if (!context) {

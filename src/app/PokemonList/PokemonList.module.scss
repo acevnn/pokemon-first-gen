@@ -8,65 +8,93 @@
 
   &__header {
     display: inline-flex;
-    padding: 1rem;
+    padding: 1.5rem;
   }
 
   &__list {
-    display: flex;
-    gap: 10px;
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem 1rem;
+    grid-auto-rows: minmax(298px, auto);
+    flex-wrap: wrap;
     padding: 0;
     margin: 0;
     list-style: none;
-    /* Ensure the <ul> is scrollable */
-    overflow-x: auto;
-    white-space: nowrap; /* Prevent line wrapping */
-    width: 100%; /* Makes the <ul> fill the parent horizontally */
-    max-width: 100%; /* Ensures no unintended overflow on the parent */
+    width: 100%;
+    z-index: 10;
 
-    &::-webkit-scrollbar {
-      height: 8px; /* Customize scrollbar height */
-      background: #fff;
-    }
-
-    &::-webkit-scrollbar-thumb {
-      background: #ff0702; /* Thumb color */
-      border-radius: 2.5px; /* Rounded scrollbar corners */
-      transition: background-color 0.5s ease-in-out, border-radius 0.5s ease-in-out;
-    }
-
-    &::-webkit-scrollbar-thumb:hover {
-      background: #555; /* Thumb hover color */
-      cursor: pointer;
-      border-radius: 0; /* Changes border radius on hover */
-    }
-
-    &::-webkit-scrollbar-thumb:active {
-      background: #333; /* Active color */
-      border-radius: 0; /* Retain flat corners */
-    }
   }
 
   &__list-item {
+    position: relative;
+
     display: flex;
     flex-direction: column;
-    align-items: center; /* Center image and name */
     justify-content: center;
-    text-align: center; /* Center align text under the image */
-    gap: 0.5rem;
+    text-align: center;
+
     margin: 0;
-    min-width: 320px;
-    height: 320px;
+    padding: 16px 24px;
 
-    $sizes: (1: 64px, 2: 128px, 3: 194px);
+    border-radius: 20px;
+    backdrop-filter: blur(7px);
+    background: linear-gradient(154deg, rgba(121, 117, 131, 0.02) 5.35%, rgba(54, 53, 103, 0.02) 83.85%), rgba(0, 0, 0, 0.30);
 
-    @each $index, $size in $sizes {
-      &:nth-child(#{$index}) {
-        img {
-          width: auto;
-          height: $size;
-        }
+    z-index: 2;
+
+
+    img {
+      transform: scale(1); /* Increase size on hover */
+      transition: transform 0.3s ease-out;
+      background: #fff;
+      border-radius: 50%;
+      padding: 12px;
+      object-fit: scale-down;
+
+      height: 96px;
+      width: 96px;
+      box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.39) inset;
+
+      &:hover {
+        transform: scale(1.15); /* Increase size on hover */
+        cursor: pointer;
       }
     }
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      opacity: 0.1; /* Set lower opacity here */
+      z-index: 1; /* Place it behind other content */
+    }
+
+  }
+
+  &__background {
+    filter: blur(200px);
+    position: fixed;
+    z-index: 1;
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    position: relative;
+    z-index: 10;
+  }
+
+  &__list-header {
+    display: flex;
+    justify-content: center;
+    text-transform: uppercase;
   }
 
   &__toggle-wrapper {

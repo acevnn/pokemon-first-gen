@@ -1,67 +1,59 @@
-import { PokemonFetch, SpriteType } from "@/types/pokemonTypes";
+export const fetchPokemonData = async ({
+  offset = 0,
+  limit = 10,
+}: {
+  offset: number;
+  limit: number;
+}) => {
+  try {
+    // const maxPokemon = 151;
+    // if (offset >= maxPokemon) {
+    //   throw new Error("Offset exceeds the maximum number of Pokémon");
+    // }
+    // const adjustedLimit = Math.min(limit, maxPokemon - offset);
+    const res = await fetch(
+      `https://pokeapi.co/api/v2/pokemon?offset=${offset}&limit=${limit}`,
+      { cache: "force-cache" },
+    );
 
-export const fetchPokemonData = async (spriteType: SpriteType) => {
-  const res = await fetch("https://pokeapi.co/api/v2/pokemon?limit=151");
-  const data = await res.json();
+    console.log("offset: ", offset);
 
-  return await Promise.all(
-    data.results.map(async (pokemon: { name: string; url: string }) => {
-      const detailRes = await fetch(pokemon.url);
-      const detailData = await detailRes.json();
+    if (!res.ok) {
+      throw new Error(`Failed to fetch Pokémon data: ${res.statusText}`);
+    }
 
-      let spriteUrl = "";
-      if (spriteType === "front") {
-        spriteUrl = detailData.sprites.front_default;
-      } else if (spriteType === "back") {
-        spriteUrl = detailData.sprites.back_default;
-      } else if (spriteType === "officialFront") {
-        spriteUrl = detailData.sprites.other.showdown?.front_default;
-      } else if (spriteType === "officialBack") {
-        spriteUrl = detailData.sprites.other.showdown?.back_default;
-      }
+    const data = await res.json();
 
-      return {
-        name: pokemon.name,
-        // frontSprite: detailData.sprites.front_default, // Front sprite
-        // backSprite: detailData.sprites.back_default, // Back sprite
-        frontSpriteShowdown: detailData.sprites.other.showdown.front_default, // Front 3d sprite
-        backSpriteShowdown: detailData.sprites.other.showdown.back_default, // Back 3d sprite
-      };
-    }),
-  );
-};
-
-export const fetchBasicPokemonData = async () => {
-  const res = await fetch("https://pokeapi.co/api/v2/pokemon?limit=151", {
-    cache: "force-cache",
-  });
-  const data = await res.json();
-
-  return await Promise.all(
-    data.results.map(async (pokemon: PokemonFetch) => {
-      try {
+    return await Promise.all(
+      data.results.map(async (pokemon: { name: string; url: string }) => {
         const detailRes = await fetch(pokemon.url);
+        if (!detailRes.ok) {
+          throw new Error(`Failed to fetch details for ${pokemon.name}`);
+        }
+
         const detailData = await detailRes.json();
+
+        console.log(detailData);
+
+        const frontSprite =
+          detailData.sprites.other.showdown?.front_default || null;
+        const backSprite =
+          detailData.sprites.other.showdown?.back_default || null;
+        const detailed = detailData.abilities[0].ability.name || null;
+
+        if (!frontSprite && !backSprite) return null;
+
         return {
           name: pokemon.name,
-          backSpriteShowdown: detailData.sprites.other.showdown.back_default,
-          frontSpriteShowdown: detailData.sprites.other.showdown.front_default,
+          frontSprite,
+          backSprite,
+          detailed,
         };
-      } catch (error) {
-        console.error(`Failed to fetch data for ${pokemon.name}`, error);
-        return null; // Return null for failed requests
-      }
-    }),
-  ).then((results) => results.filter(Boolean)); // Filter out null values
-};
-
-export const fetchEvolutionChain = async (pokemonId: number) => {
-  const speciesRes = await fetch(
-    `https://pokeapi.co/api/v2/pokemon-species/${pokemonId}/`,
-  );
-  const speciesData = await speciesRes.json();
-  const evolutionChainUrl = speciesData.evolution_chain.url;
-
-  const evolutionRes = await fetch(evolutionChainUrl);
-  const evolutionData = await evolutionRes.json();
+      }),
+    ).then((results) => results.filter(Boolean));
+  } catch (error) {
+    console.error(error);
+    throw error; // Rethrow the
+    // error to handle it in the UI
+  }
 };

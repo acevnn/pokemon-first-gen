@@ -11,13 +11,51 @@
     align-items: center;
   }
 
+  &__search {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    border: 1px solid #dedede;
+    padding: 8px 16px;
+    border-radius: 6px;
+    background: #fff;
+
+    svg {
+      width: 12px;
+      height: 24px;
+      cursor: pointer; /* If the icon is interactive */
+      color: #CBCBCB;
+    }
+
+    input {
+      border: none;
+      outline: none;
+      flex: 1; /* Ensures input takes up remaining space */
+      font-size: 1rem;
+      color: #CBCBCB;
+      font-family: 'ClashDisplay-Regular', 'sans-serif';
+
+      &::placeholder {
+        color: #CBCBCB;
+      }
+    }
+  }
+
   &__nav-links {
     display: flex;
     gap: 1rem;
     color: #ffeaea;
 
     a {
-      font-weight: 700;
+      font-family: 'ClashDisplay-Regular', 'sans-serif';
+      transform: scale(1);
+      transition: transform 0.2s ease; /* Smooth transition for scaling */
+
+      &:hover {
+        transform: scale(1.2); /* Increase size on hover */
+        color: #ffdfdf; /* Optional: Change color on hover */
+      }
     }
   }
 }

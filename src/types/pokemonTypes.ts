@@ -1,13 +1,10 @@
-// SpriteType specifies the type of sprite to fetch
 export type SpriteType = "front" | "back" | "officialFront" | "officialBack";
 
-// Represents the basic data for a fetched Pokémon
 export type PokemonFetch = {
   name: string;
-  url: string; // The URL to fetch detailed Pokémon data
+  url: string;
 };
 
-// Represents the sprites structure from the API
 export type PokemonSprites = {
   front_default: string;
   back_default: string;
@@ -19,15 +16,14 @@ export type PokemonSprites = {
   };
 };
 
-// Represents the detailed data structure for a Pokémon
-export type PokemonDetails = {
-  name: string;
-  sprites: PokemonSprites;
-};
+// export type PokemonDetails = {
+//   name: string;
+//   sprites: PokemonSprites;
+// };
 
-// Final structured Pokémon object for frontend use
-export type Pokemonx = {
+export type Pokemon = {
   name: string;
-  frontSpriteShowdown: string;
-  backSpriteShowdown: string;
+  frontSprite: string;
+  backSprite: string;
+  detailed?: string;
 };

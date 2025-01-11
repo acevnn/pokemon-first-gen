@@ -5,6 +5,7 @@ export function useHeader() {
     header: styles.header,
     headerLogo: styles["header__logo"],
     headerNav: styles["header__nav-links"],
+    headerSearch: styles["header__search"],
   };
   return { classes };
 }

@@ -1,21 +1,11 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
-import "./globals.css";
+import "@/styles/globals.css";
+import "@/../public/css/clash-display.css";
 import React from "react";
 import Header from "@/app/Header/Header";
 import Image from "next/image";
-import Cover from "../../pokemon-cover.jpg";
+import Cover from "@/assets/Images/pokemon-cover.jpg";
 import styles from "./layout.module.scss";
-
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
 
 export const metadata: Metadata = {
   title: "Pokemon's",
