@@ -6,17 +6,10 @@ export const fetchPokemonData = async ({
   limit: number;
 }) => {
   try {
-    // const maxPokemon = 151;
-    // if (offset >= maxPokemon) {
-    //   throw new Error("Offset exceeds the maximum number of Pokémon");
-    // }
-    // const adjustedLimit = Math.min(limit, maxPokemon - offset);
     const res = await fetch(
       `https://pokeapi.co/api/v2/pokemon?offset=${offset}&limit=${limit}`,
       { cache: "force-cache" },
     );
-
-    console.log("offset: ", offset);
 
     if (!res.ok) {
       throw new Error(`Failed to fetch Pokémon data: ${res.statusText}`);
@@ -53,7 +46,6 @@ export const fetchPokemonData = async ({
     ).then((results) => results.filter(Boolean));
   } catch (error) {
     console.error(error);
-    throw error; // Rethrow the
-    // error to handle it in the UI
+    throw error;
   }
 };

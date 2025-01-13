@@ -12,26 +12,28 @@
   }
 
   &__search {
+    background: #fff;
+
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 5px;
+
     border: 1px solid #dedede;
-    padding: 8px 16px;
     border-radius: 6px;
-    background: #fff;
+    padding: 8px 16px;
 
     svg {
       width: 12px;
       height: 24px;
-      cursor: pointer; /* If the icon is interactive */
+      cursor: pointer;
       color: #CBCBCB;
     }
 
     input {
       border: none;
       outline: none;
-      flex: 1; /* Ensures input takes up remaining space */
+      flex: 1;
       font-size: 1rem;
       color: #CBCBCB;
       font-family: 'ClashDisplay-Regular', 'sans-serif';
@@ -50,11 +52,11 @@
     a {
       font-family: 'ClashDisplay-Regular', 'sans-serif';
       transform: scale(1);
-      transition: transform 0.2s ease; /* Smooth transition for scaling */
+      transition: transform 0.2s ease;
 
       &:hover {
-        transform: scale(1.2); /* Increase size on hover */
-        color: #ffdfdf; /* Optional: Change color on hover */
+        transform: scale(1.2);
+        color: #ffdfdf;
       }
     }
   }

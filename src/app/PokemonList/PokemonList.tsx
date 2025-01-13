@@ -21,7 +21,6 @@ const PokemonList = ({
   const [isLoading, setIsLoading] = useState(false);
   const sentinelRef = useRef<HTMLDivElement | null>(null);
 
-  // Function to load more Pokémon
   const loadMorePokemon = useCallback(async (offset: number) => {
     try {
       setIsLoading(true);
@@ -33,7 +32,6 @@ const PokemonList = ({
 
           return [...prev, ...newPokemon];
         });
-        console.log("load more pokemon data", pokemon);
       } catch (err) {
         setError("Failed to load Pokémon data. Please try again later.");
         return err;
@@ -47,11 +45,10 @@ const PokemonList = ({
     }
   }, []);
 
-  // Load initial Pokémon data
   useEffect(() => {
     const fetchInitialPokemon = async () => {
       if (pokemon.length === 0) {
-        await loadMorePokemon(0); // Load the first chunk
+        await loadMorePokemon(0);
         console.log('load initial pokemon data "', pokemon);
       }
     };
@@ -85,7 +82,6 @@ const PokemonList = ({
     };
   }, [loadMorePokemon, pokemon.length, totalItems, isLoading]);
 
-  // Retry button for errors
   if (error) {
     return (
       <div>
@@ -96,8 +92,6 @@ const PokemonList = ({
   }
 
   const toggleText = `Show ${isFrontView ? "Back" : "Front"} View`;
-  // console.log("them pokemonnnn", pokemon.name);
-  const maxWidth = 206;
   return (
     <>
       <div id="pokemon-list" className={classes.pokemonListContainer}>

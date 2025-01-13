@@ -18,7 +18,6 @@ function Header() {
         <Image width={128} height={48} src={pokeText} alt="Pokéheader" />
       </div>
 
-      {/* Navigation Links */}
       <nav className={classes.headerNav}>
         <Link href="/">Home</Link>
         <Link href="/PokemonList">All Pokémon</Link>
@@ -26,7 +25,6 @@ function Header() {
         <Link href="/Contact">Contact</Link>
       </nav>
 
-      {/* Search Bar */}
       <div className={classes.headerSearch}>
         <IconArrowLeft />
         <input
