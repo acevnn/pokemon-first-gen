@@ -1,47 +1,93 @@
 .pokemon-wrapper {
-  overflow-x: auto;
-  padding: 1rem;
+  padding: 2.5rem 1.5rem;
+
+  &__container {
+    padding: 24px;
+  }
+
 
   &__header {
     display: inline-flex;
-    padding: 1rem;
+    padding: 1.5rem;
   }
 
   &__list {
-    display: flex; /* Layout the list items in a row */
-    gap: 10px; /* Add space between list items */
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem 1rem;
+    grid-auto-rows: minmax(298px, auto);
+    flex-wrap: wrap;
     padding: 0;
     margin: 0;
-    list-style: none; /* Remove default list styling */
-    white-space: nowrap; /* Prevent items from wrapping to the next line */
+    list-style: none;
+    width: 100%;
+    z-index: 10;
   }
 
   &__list-item {
+    position: relative;
+
     display: flex;
     flex-direction: column;
-    align-items: center; /* Center image and name */
     justify-content: center;
-    text-align: center; /* Center align text under the image */
-    gap: 0.5rem;
+    text-align: center;
+
     margin: 0;
-    min-width: 320px;
-    height: 320px;
+    padding: 16px 24px;
 
-    $sizes: (1: 64px, 2: 128px, 3: 194px);
+    border-radius: 20px;
+    backdrop-filter: blur(7px);
+    background: linear-gradient(154deg, rgba(121, 117, 131, 0.02) 5.35%, rgba(54, 53, 103, 0.02) 83.85%), rgba(0, 0, 0, 0.30);
 
-    @each $index, $size in $sizes {
-      &:nth-child(#{$index}) {
-        img {
-          width: auto;
-          height: $size;
-        }
+    z-index: 2;
+
+
+    img {
+      transform: scale(1);
+      transition: transform 0.3s ease-out;
+      background: #fff;
+      border-radius: 50%;
+      padding: 12px;
+      object-fit: scale-down;
+
+      height: 96px;
+      width: 96px;
+      box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.39) inset;
+
+      &:hover {
+        transform: scale(1.15);
+        cursor: pointer;
       }
     }
+  }
+
+  &__background {
+    filter: blur(200px);
+    position: fixed;
+    z-index: 1;
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    position: relative;
+    z-index: 10;
+  }
+
+  &__list-header {
+    display: flex;
+    justify-content: center;
+    text-transform: uppercase;
   }
 
   &__toggle-wrapper {
     width: 100%;
     display: flex;
+    justify-content: space-between;
   }
 
   &__toggle {
@@ -50,28 +96,4 @@
     border: 1px solid white;
     color: #fff;
   }
-
-  &::-webkit-scrollbar {
-    height: 8px; /* Customize scrollbar height */
-    background: #fff;
-  }
-
-  &::-webkit-scrollbar-thumb {
-    background: #ff0702; /* Thumb color */
-    border-radius: 2.5px; /* Rounded scrollbar corners */
-    transition: background-color 0.5s ease-in-out, border-radius 0.5s ease-in-out;
-  }
-
-  &::-webkit-scrollbar-thumb:hover {
-    background: #555; /* Thumb hover color */
-    cursor: pointer;
-    border-radius: 0; /* Changes border radius on hover */
-  }
-
-  &::-webkit-scrollbar-thumb:active {
-    background: #333; /* Active color */
-    border-radius: 0; /* Retain flat corners */
-  }
-
-
 }

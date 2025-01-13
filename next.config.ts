@@ -9,6 +9,11 @@ const nextConfig: NextConfig = {
         port: "",
         pathname: "/PokeAPI/sprites/master/**",
       },
+      {
+        protocol: "https",
+        hostname: "img.icons8.com",
+        port: "",
+      },
     ],
   },
 };

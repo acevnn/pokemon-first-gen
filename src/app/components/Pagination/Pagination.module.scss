@@ -1,0 +1,34 @@
+.pagination-wrapper {
+  display: flex;
+  padding: 1.5rem;
+
+  &__pagination {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    list-style: none;
+  }
+
+  &__item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+
+    &--active {
+      button {
+        background-color: #e92929;
+      }
+    }
+  }
+
+  &__link {
+    width: 2rem;
+    height: 2rem;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    border: none;
+
+  }
+}

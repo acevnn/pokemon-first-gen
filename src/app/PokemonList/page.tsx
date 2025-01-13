@@ -1,17 +1,11 @@
 import PokemonList from "@/app/PokemonList/PokemonList";
-// import { fetchPokemonData } from "@/utils/pokemonData";
-import { fetchBasicPokemonData } from "@/utils/pokemonData";
 import "./PokemonList.module.scss";
-import { usePokemonList } from "@/app/PokemonList/PokemonList.hooks";
 
-export default async function CommunityPage() {
-  const pokemon = await fetchBasicPokemonData(); // Fetch Pokémon data server-side
-  const { classes } = usePokemonList();
-
-  return (
-    <>
-      <h1 className={classes.PokemonListHeader}>List of all Rokemons</h1>
-      <PokemonList pokemon={pokemon} />
-    </>
-  );
+export default async function showAllPokePage() {
+  try {
+    return <PokemonList limit={9} totalItems={151} />;
+  } catch (error) {
+    console.error("Failed to fetch Pokémon data:", error);
+    return <p>Error loading Pokémon data</p>;
+  }
 }
