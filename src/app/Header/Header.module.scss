@@ -5,6 +5,8 @@
   align-items: center;
   gap: 1rem;
   padding: 1rem;
+  position: relative;
+  z-index: 10;
 
   &__logo {
     display: flex;
@@ -17,7 +19,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 5px;
+    gap: 12px;
 
     border: 1px solid #dedede;
     border-radius: 6px;
@@ -25,7 +27,7 @@
 
     svg {
       width: 12px;
-      height: 24px;
+      height: 12px;
       cursor: pointer;
       color: #CBCBCB;
     }

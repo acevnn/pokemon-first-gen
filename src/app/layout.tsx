@@ -25,9 +25,8 @@ export default function RootLayout({
           alt={"Just an alt"}
           className={styles["image-cover"]}
         />
-        <Header /> {/* Persistent Header */}
+        <Header />
         <main>{children}</main>
-        {/* Page-specific content */}
         <footer>
           <p>© 2024 Pokedex App. All Rights Reserved.</p>
         </footer>

@@ -2,6 +2,7 @@ import styles from "./PokemonList.module.scss";
 
 export function usePokemonList() {
   const classes = {
+    PokeTrainerImg: styles["poke-trainer"],
     PokemonWrapper: styles["pokemon-wrapper"],
     pokemonListContainer: styles["pokemon-wrapper__container"],
     PokemonListWrapper: styles["pokemon-wrapper__list"],

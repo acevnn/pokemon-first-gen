@@ -1,11 +1,12 @@
 "use client";
 
-import { useCallback, useEffect, useRef, useState } from "react";
+import React, { useCallback, useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import { usePokemonList } from "@/app/PokemonList/PokemonList.hooks";
 import { Pokemon } from "@/types/pokemonTypes";
 import { fetchPokemonData } from "@/utils/pokemonData";
 import "./PokemonList.module.scss";
+import Ash from "@/assets/Images/ash-kepa4.png";
 
 const PokemonList = ({
   totalItems = 151,
@@ -17,7 +18,7 @@ const PokemonList = ({
   const { classes } = usePokemonList();
   const [isFrontView, setIsFrontView] = useState(false);
   const [error, setError] = useState<string | null>(null);
-  const [pokemon, setPokemon] = useState<Pokemon[]>([]); // All Pokémon loaded via infinite scroll
+  const [pokemon, setPokemon] = useState<Pokemon[]>([]);
   const [isLoading, setIsLoading] = useState(false);
   const sentinelRef = useRef<HTMLDivElement | null>(null);
 
@@ -91,9 +92,16 @@ const PokemonList = ({
     );
   }
 
-  const toggleText = `Show ${isFrontView ? "Back" : "Front"} View`;
+  const toggleText = `Show ${isFrontView ? "Front" : "Back"} View`;
   return (
     <>
+      <Image
+        className={classes.PokeTrainerImg}
+        width={400}
+        height={400}
+        src={Ash}
+        alt="asd"
+      />
       <div id="pokemon-list" className={classes.pokemonListContainer}>
         <ul className={classes.PokemonListWrapper}>
           <div className={classes.pokemonListWrapperBackground}>
@@ -107,17 +115,17 @@ const PokemonList = ({
               <path
                 d="M676.505 266.333C676.505 413.425 525.064 532.666 338.252 532.666C151.441 532.666 0 413.425 0 266.333C0 119.241 151.441 0 338.252 0C525.064 0 676.505 119.241 676.505 266.333Z"
                 fill="#00FF9F"
-                fill-opacity="0.15"
+                fillOpacity="0.15"
               />
               <path
                 d="M849.273 532.667C849.273 679.759 697.832 799 511.02 799C324.209 799 172.768 679.759 172.768 532.667C172.768 385.575 324.209 266.334 511.02 266.334C697.832 266.334 849.273 385.575 849.273 532.667Z"
                 fill="#00BAFF"
-                fill-opacity="0.15"
+                fillOpacity="0.15"
               />
               <path
                 d="M1065.33 266.333C1065.33 413.425 913.892 532.666 727.081 532.666C540.269 532.666 388.828 413.425 388.828 266.333C388.828 119.241 540.269 0 727.081 0C913.892 0 1065.33 119.241 1065.33 266.333Z"
                 fill="#FF9900"
-                fill-opacity="0.15"
+                fillOpacity="0.15"
               />
             </svg>
           </div>
