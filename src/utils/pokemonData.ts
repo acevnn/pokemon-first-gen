@@ -26,8 +26,6 @@ export const fetchPokemonData = async ({
 
         const detailData = await detailRes.json();
 
-        console.log(detailData);
-
         const frontSprite =
           detailData.sprites.other.showdown?.front_default || null;
         const backSprite =

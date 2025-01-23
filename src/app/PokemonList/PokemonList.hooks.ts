@@ -9,7 +9,6 @@ export function usePokemonList() {
     PokemonListWrapperContainer: styles["pokemon-wrapper__list-container"],
     PokemonListWrapperItem: styles["pokemon-wrapper__list-item"],
     PokemonListContentWrapper: styles["pokemon-wrapper__content"],
-    pokemonListWrapperBackground: styles["pokemon-wrapper__background"],
     pokemonListHeader: styles["pokemon-wrapper__list-header"],
     LayoutPokemonListHeader: styles["pokemon-wrapper__header"],
     LayoutPokemonListWrapper: styles["pokemon-wrapper__list-wrapper"],

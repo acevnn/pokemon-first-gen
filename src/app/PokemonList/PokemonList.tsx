@@ -25,24 +25,19 @@ const PokemonList = ({
   const loadMorePokemon = useCallback(async (offset: number) => {
     try {
       setIsLoading(true);
-      try {
-        const newPokemon = await fetchPokemonData({ offset, limit });
-        setPokemon((prev) => {
-          // console.log("Previous Pokémon:", prev);
-          // console.log("Newly fetched Pokémon:", newPokemon);
+      const newPokemon = await fetchPokemonData({ offset, limit });
 
-          return [...prev, ...newPokemon];
-        });
-      } catch (err) {
-        setError("Failed to load Pokémon data. Please try again later.");
-        return err;
-      } finally {
-        setIsLoading(false);
-      }
+      setPokemon((prev) => {
+        const existingNames = new Set(prev.map((poke) => poke.name));
+        const filteredNewPokemon = newPokemon.filter(
+          (poke) => !existingNames.has(poke.name),
+        );
+        return [...prev, ...filteredNewPokemon];
+      });
     } catch (err) {
       setError("Failed to load Pokémon data. Please try again later.");
+    } finally {
       setIsLoading(false);
-      return err;
     }
   }, []);
 
@@ -50,7 +45,6 @@ const PokemonList = ({
     const fetchInitialPokemon = async () => {
       if (pokemon.length === 0) {
         await loadMorePokemon(0);
-        console.log('load initial pokemon data "', pokemon);
       }
     };
 
@@ -66,7 +60,6 @@ const PokemonList = ({
         if (entry.isIntersecting && pokemon.length < totalItems && !isLoading) {
           const offset = pokemon.length;
           await loadMorePokemon(offset);
-          console.log("maybe rhe same as newPokemon ", pokemon);
         }
       },
       { threshold: 1.0 }, // Trigger when fully visible
@@ -91,6 +84,17 @@ const PokemonList = ({
       </div>
     );
   }
+  useEffect(() => {
+    console.log(
+      "Updated Pokémon stateqweqweqweqwe qweqwe qwe qwe qwe:",
+      pokemon,
+    );
+  }, [pokemon]);
+  useEffect(() => {
+    return () => {
+      setPokemon([]);
+    };
+  }, []);
 
   const toggleText = `Show ${isFrontView ? "Front" : "Back"} View`;
   return (
@@ -100,44 +104,22 @@ const PokemonList = ({
         width={400}
         height={400}
         src={Ash}
-        alt="asd"
+        priority
+        alt="Image of pokemon trainer Ash Ketchup"
       />
       <div id="pokemon-list" className={classes.pokemonListContainer}>
         <ul className={classes.PokemonListWrapper}>
-          <div className={classes.pokemonListWrapperBackground}>
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="1066"
-              height="799"
-              viewBox="0 0 1066 799"
-              fill="none"
-            >
-              <path
-                d="M676.505 266.333C676.505 413.425 525.064 532.666 338.252 532.666C151.441 532.666 0 413.425 0 266.333C0 119.241 151.441 0 338.252 0C525.064 0 676.505 119.241 676.505 266.333Z"
-                fill="#00FF9F"
-                fillOpacity="0.15"
-              />
-              <path
-                d="M849.273 532.667C849.273 679.759 697.832 799 511.02 799C324.209 799 172.768 679.759 172.768 532.667C172.768 385.575 324.209 266.334 511.02 266.334C697.832 266.334 849.273 385.575 849.273 532.667Z"
-                fill="#00BAFF"
-                fillOpacity="0.15"
-              />
-              <path
-                d="M1065.33 266.333C1065.33 413.425 913.892 532.666 727.081 532.666C540.269 532.666 388.828 413.425 388.828 266.333C388.828 119.241 540.269 0 727.081 0C913.892 0 1065.33 119.241 1065.33 266.333Z"
-                fill="#FF9900"
-                fillOpacity="0.15"
-              />
-            </svg>
-          </div>
           {pokemon.map((poke, index) => (
-            <li className={classes.PokemonListWrapperItem} key={index}>
+            <li
+              className={classes.PokemonListWrapperItem}
+              key={`${poke.name}-${index}`}
+            >
               <div className={classes.PokemonListContentWrapper}>
                 <Image
                   loading="lazy"
                   unoptimized
                   src={isFrontView ? poke.backSprite : poke.frontSprite}
                   alt={`${poke.name} ${isFrontView ? "front" : "back"} view`}
-                  layout="intristic"
                   width={87}
                   height={87}
                 />

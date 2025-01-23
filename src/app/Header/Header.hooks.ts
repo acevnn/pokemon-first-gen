@@ -6,6 +6,11 @@ export function useHeader() {
     headerLogo: styles["header__logo"],
     headerNav: styles["header__nav-links"],
     headerSearch: styles["header__search"],
+    headerText: styles["header__text"],
+    headerLogoWrapper: styles["header__logo-wrapper"],
+    visible: styles.visible,
+    hidden: styles.hidden,
+    headerMobile: styles["header__mobile"],
   };
   return { classes };
 }

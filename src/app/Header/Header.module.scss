@@ -1,16 +1,60 @@
+@use '@/styles/mixins';
+
 .header {
-  width: 100%;
+  min-width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: 1rem;
-  padding: 1rem;
+  gap: 4px;
   position: relative;
   z-index: 10;
+
+  &__mobile {
+    display: flex;
+    gap: 4px;
+  }
+
+  &__logo-wrapper {
+    display: flex;
+
+    a {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 6px;
+
+      img {
+        width: 24px;
+        height: 24px;
+
+        @include mixins.media-query('xs') {
+          width: 32px;
+          height: 32px;
+        }
+      }
+    }
+
+    svg {
+      width: 18px;
+      height: 18px;
+    }
+  }
+
+  input {
+    width: 0;
+  }
 
   &__logo {
     display: flex;
     align-items: center;
+
+
+  }
+
+  &__text {
+    color: #fff;
+    font-family: 'Pokemon-Solid', sans-serif;
+    font-size: 24px;
   }
 
   &__search {
@@ -19,11 +63,15 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 12px;
+    gap: 8px;
 
     border: 1px solid #dedede;
     border-radius: 6px;
-    padding: 8px 16px;
+    padding: 4px 12px;
+
+    @include mixins.media-query('xs') {
+      padding: 4px 12px;
+    }
 
     svg {
       width: 12px;

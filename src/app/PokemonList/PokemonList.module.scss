@@ -70,12 +70,6 @@
     }
   }
 
-  &__background {
-    filter: blur(200px);
-    position: fixed;
-    z-index: 1;
-  }
-
   &__content {
     display: flex;
     flex-direction: column;
