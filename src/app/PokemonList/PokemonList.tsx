@@ -84,12 +84,7 @@ const PokemonList = ({
       </div>
     );
   }
-  useEffect(() => {
-    console.log(
-      "Updated Pokémon stateqweqweqweqwe qweqwe qwe qwe qwe:",
-      pokemon,
-    );
-  }, [pokemon]);
+  useEffect(() => {}, [pokemon]);
   useEffect(() => {
     return () => {
       setPokemon([]);

@@ -7,7 +7,6 @@ import Link from "next/link";
 export interface DrawerProps {
   isOpen: boolean;
   toggleDrawer: () => void;
-  alwaysOpen?: boolean;
 }
 
 export function Drawer(props: DrawerProps) {
