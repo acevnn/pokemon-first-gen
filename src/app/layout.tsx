@@ -23,10 +23,6 @@ export default function RootLayout({
           href="https://fonts.cdnfonts.com/css/pokemon-solid"
           rel="stylesheet"
         />
-        <link
-          rel="stylesheet"
-          href="/css/font-awesome-4.7.0/css/font-awesome.min.css"
-        />
       </Head>
       <body>
         <div className={styles["background-wrapper"]}>
