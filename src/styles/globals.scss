@@ -1,3 +1,8 @@
+@use "mixins";
+@use "layout";
+@use "bootstrap-grid";
+@use "@/../public/css/clash-display";
+
 :root {
   --background: #242424;
   --foreground: #fff;
@@ -28,9 +33,3 @@ a {
   color: inherit;
   text-decoration: none;
 }
-
-/*@media (prefers-color-scheme: dark) {*/
-/*  html {*/
-/*    color-scheme: dark;*/
-/*  }*/
-/*}*/

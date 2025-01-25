@@ -1,10 +1,18 @@
+.poke-trainer {
+  position: fixed;
+  right: 0;
+  width: auto;
+  height: auto;
+  top: 139px;
+  z-index: 9;
+}
+
 .pokemon-wrapper {
   padding: 2.5rem 1.5rem;
 
   &__container {
     padding: 24px;
   }
-
 
   &__header {
     display: inline-flex;
@@ -62,12 +70,6 @@
     }
   }
 
-  &__background {
-    filter: blur(200px);
-    position: fixed;
-    z-index: 1;
-  }
-
   &__content {
     display: flex;
     flex-direction: column;
@@ -88,6 +90,13 @@
     width: 100%;
     display: flex;
     justify-content: space-between;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    background: #000;
+    z-index: 10;
+    opacity: 0.9;
+    padding: 24px;
   }
 
   &__toggle {
@@ -95,5 +104,6 @@
     background: transparent;
     border: 1px solid white;
     color: #fff;
+    cursor: pointer;
   }
 }

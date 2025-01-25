@@ -1,0 +1,93 @@
+@use "mixins";
+
+@include mixins.media-query('xlg') {
+  :root {
+    --font-preset-heading-1: normal normal 700 3.75rem/4.5rem 'ClashDisplay-Regular', sans-serif;
+    --font-preset-heading-2: normal normal 700 3rem/4.125rem 'ClashDisplay-Regular', sans-serif;
+    --font-preset-heading-3: normal normal 700 2.25rem/1.875rem 'ClashDisplay-Regular', sans-serif;
+    --font-preset-heading-4: normal normal 700 2.625rem/3.25rem 'ClashDisplay-Regular', sans-serif;
+    --font-preset-heading-5: normal normal 700 1.75rem/1.75rem 'ClashDisplay-Regular', sans-serif;
+    --font-preset-heading-6: normal normal 700 1.375rem/1.625rem 'ClashDisplay-Regular', sans-serif;
+    --font-preset-heading-7: normal normal 700 2.625rem/3.25rem 'ClashDisplay-Regular', sans-serif;
+    --font-preset-heading-8: normal normal 800 3.75rem/4.5rem 'ClashDisplay-Regular', sans-serif;
+    --font-preset-heading-9: normal normal 800 3rem/3.25rem 'ClashDisplay-Regular', sans-serif;
+    --font-preset-heading-10: normal normal 700 1.375rem/1.625rem 'ClashDisplay-Regular', sans-serif;
+    --font-preset-heading-11: normal normal 700 1.875rem/2.375rem 'ClashDisplay-Regular', sans-serif;
+    --font-preset-label-1: normal normal 700 1.125rem/1.125rem 'ClashDisplay-Regular', sans-serif;
+    --font-preset-label-3: normal normal 400 1.125rem/1.125rem 'ClashDisplay-Regular', sans-serif;
+    --font-preset-label-4: normal normal 800 2.25rem/2.375rem 'ClashDisplay-Regular', sans-serif;
+    --font-preset-label-6: normal normal 400 1rem/1.125rem 'ClashDisplay-Regular', sans-serif;
+    --font-preset-label-7: normal normal 700 1.125rem/1rem 'ClashDisplay-Regular', sans-serif;
+    --font-preset-label-8: normal normal 700 1.125rem/1.25rem 'ClashDisplay-Regular', sans-serif;
+    --font-preset-copy-1: normal normal 400 1.75rem/1.875rem 'ClashDisplay-Regular', sans-serif;
+  }
+}
+
+@include mixins.media-query('lg') {
+  :root {
+    --font-preset-heading-1: normal normal 700 3.75rem/4.5rem 'ClashDisplay-Regular', sans-serif;
+    --font-preset-heading-2: normal normal 700 2.625rem/3.25rem 'ClashDisplay-Regular', sans-serif;
+    --font-preset-heading-3: normal normal 700 1.875rem/1.625rem 'ClashDisplay-Regular', sans-serif;
+    --font-preset-heading-4: normal normal 700 1.875rem/1.875rem 'ClashDisplay-Regular', sans-serif;
+    --font-preset-heading-5: normal normal 700 1.375rem/1.625rem 'ClashDisplay-Regular', sans-serif;
+    --font-preset-heading-6: normal normal 700 1.25rem/1.5rem 'ClashDisplay-Regular', sans-serif;
+    --font-preset-heading-7: normal normal 700 2.25rem/2.375rem 'ClashDisplay-Regular', sans-serif;
+    --font-preset-heading-8: normal normal 800 3rem/4.125rem 'ClashDisplay-Regular', sans-serif;
+    --font-preset-heading-9: normal normal 800 3rem/3.25rem 'ClashDisplay-Regular', sans-serif;
+    --font-preset-heading-10: normal normal 700 1.375rem/1.625rem 'ClashDisplay-Regular', sans-serif;
+    --font-preset-heading-11: normal normal 700 1.875rem/2.375rem 'ClashDisplay-Regular', sans-serif;
+    --font-preset-label-1: normal normal 700 1.125rem/1.125rem 'ClashDisplay-Regular', sans-serif;
+    --font-preset-label-3: normal normal 400 1.125rem/1.125rem 'ClashDisplay-Regular', sans-serif;
+    --font-preset-label-4: normal normal 800 1.875rem/2.375rem 'ClashDisplay-Regular', sans-serif;
+    --font-preset-label-6: normal normal 400 1rem/1.125rem 'ClashDisplay-Regular', sans-serif;
+    --font-preset-label-7: normal normal 700 1.125rem/1rem 'ClashDisplay-Regular', sans-serif;
+    --font-preset-label-8: normal normal 700 1.125rem/1.25rem 'ClashDisplay-Regular', sans-serif;
+    --font-preset-copy-1: normal normal 400 1.75rem/1.875rem 'ClashDisplay-Regular', sans-serif;
+  }
+}
+
+@media only screen and (min-width: 672px) and (max-width: 1055px) {
+  :root {
+    --font-preset-heading-1: normal normal 700 3rem/3.25rem 'ClashDisplay-Regular', sans-serif;
+    --font-preset-heading-2: normal normal 700 2.25rem/2.375rem 'ClashDisplay-Regular', sans-serif;
+    --font-preset-heading-3: normal normal 700 1.875rem/1.625rem 'ClashDisplay-Regular', sans-serif;
+    --font-preset-heading-4: normal normal 700 1.375rem/1.625rem 'ClashDisplay-Regular', sans-serif;
+    --font-preset-heading-5: normal normal 700 1.375rem/1.625rem 'ClashDisplay-Regular', sans-serif;
+    --font-preset-heading-6: normal normal 700 1.25rem/1.5rem 'ClashDisplay-Regular', sans-serif;
+    --font-preset-heading-7: normal normal 700 1.875rem/1.875rem 'ClashDisplay-Regular', sans-serif;
+    --font-preset-heading-8: normal normal 800 2.25rem/2.375rem 'ClashDisplay-Regular', sans-serif;
+    --font-preset-heading-9: normal normal 800 1.875rem/2.375rem 'ClashDisplay-Regular', sans-serif;
+    --font-preset-heading-10: normal normal 600 1.125rem/1.25rem 'ClashDisplay-Regular', sans-serif;
+    --font-preset-heading-11: normal normal 700 1rem/1.25rem 'ClashDisplay-Regular', sans-serif;
+    --font-preset-label-1: normal normal 700 0.875rem/1.125rem 'ClashDisplay-Regular', sans-serif;
+    --font-preset-label-3: normal normal 400 0.875rem/1.125rem 'ClashDisplay-Regular', sans-serif;
+    --font-preset-label-4: normal normal 800 1.75rem/1.875rem 'ClashDisplay-Regular', sans-serif;
+    --font-preset-label-6: normal normal 400 1rem/1.125rem 'ClashDisplay-Regular', sans-serif;
+    --font-preset-label-7: normal normal 700 0.75rem/0.75rem 'ClashDisplay-Regular', sans-serif;
+    --font-preset-label-8: normal normal 700 0.75rem/0.9375rem 'ClashDisplay-Regular', sans-serif;
+    --font-preset-copy-1: normal normal 400 1rem/1.25rem 'ClashDisplay-Regular', sans-serif;
+  }
+}
+
+@media only screen and (max-width: 671px) {
+  :root {
+    --font-preset-heading-1: normal normal 700 2.625rem/2.375rem 'ClashDisplay-Regular', sans-serif;
+    --font-preset-heading-2: normal normal 700 1.875rem/1.875rem 'ClashDisplay-Regular', sans-serif;
+    --font-preset-heading-3: normal normal 700 1.75rem/1.5rem 'ClashDisplay-Regular', sans-serif;
+    --font-preset-heading-4: normal normal 700 1.125rem/1.25rem 'ClashDisplay-Regular', sans-serif;
+    --font-preset-heading-5: normal normal 700 1.25rem/1.5rem 'ClashDisplay-Regular', sans-serif;
+    --font-preset-heading-6: normal normal 700 1.125rem/1.25rem 'ClashDisplay-Regular', sans-serif;
+    --font-preset-heading-7: normal normal 700 1.375rem/1.625rem 'ClashDisplay-Regular', sans-serif;
+    --font-preset-heading-8: normal normal 800 1.75rem/1.875rem 'ClashDisplay-Regular', sans-serif;
+    --font-preset-heading-9: normal normal 800 1.125rem/1.5rem 'ClashDisplay-Regular', sans-serif;
+    --font-preset-heading-10: normal normal 400 1rem/1.25rem 'ClashDisplay-Regular', sans-serif;
+    --font-preset-heading-11: normal normal 400 0.75rem/0.9375rem 'ClashDisplay-Regular', sans-serif;
+    --font-preset-label-1: normal normal 700 0.75rem/1.125rem 'ClashDisplay-Regular', sans-serif;
+    --font-preset-label-3: normal normal 400 0.75rem/1.125rem 'ClashDisplay-Regular', sans-serif;
+    --font-preset-label-4: normal normal 800 1.375rem/1.625rem 'ClashDisplay-Regular', sans-serif;
+    --font-preset-label-6: normal normal 400 0.75rem/1rem 'ClashDisplay-Regular', sans-serif;
+    --font-preset-label-7: normal normal 700 0.75rem/0.75rem 'ClashDisplay-Regular', sans-serif;
+    --font-preset-label-8: normal normal 700 0.75rem/0.9375rem 'ClashDisplay-Regular', sans-serif;
+    --font-preset-copy-1: normal normal 400 0.875rem/1.125rem 'ClashDisplay-Regular', sans-serif;
+  }
+}

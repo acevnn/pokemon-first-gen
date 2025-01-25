@@ -50,6 +50,7 @@
 @font-face {
   font-family: 'ClashDisplay-Semibold';
   src: url('../fonts/clash-display/ClashDisplay-Semibold.woff2') format('woff2');
+  font-weight: 600;
   font-display: swap;
   font-style: normal;
 }
@@ -58,6 +59,19 @@
   font-family: 'ClashDisplay-Bold';
   src: url('../fonts/clash-display/ClashDisplay-Bold.woff2') format('woff2');
   font-weight: 700;
+  font-display: swap;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'ClashDisplay';
+  src: url('../fonts/clash-display/ClashDisplay-Bold.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Pokemon-Solid';
+  src: url('../fonts/Pokemon Solid.ttf') format('truetype');
+  font-weight: 400;
   font-display: swap;
   font-style: normal;
 }

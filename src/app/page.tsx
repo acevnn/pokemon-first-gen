@@ -1,11 +1,15 @@
-import Link from "next/link";
-import "@/styles/globals.css/";
+import "@/styles/globals.scss/";
+import styles from "./page.module.scss";
+import React from "react";
 
 export default function HomePage() {
   return (
-    <div>
-      <Link href="/PokemonList" />
-      <h1>Welcome to the First Generation Pokedex!</h1>
-    </div>
+    <section className={`${styles.hero__wrapper} container`}>
+      <h1 className={styles["hero__heading"]}>
+        Discover, learn and catch them all!
+      </h1>
+      <p className={styles["hero"]}>Scroll endlessly through your favorite</p>
+      <button>Explore now!</button>
+    </section>
   );
 }
