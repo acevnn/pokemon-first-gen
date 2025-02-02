@@ -1,11 +1,11 @@
 "use client";
 
 import React, { useState } from "react";
-import { useHeaderNavigation } from "./HeaderNavigation.hooks";
+import { useHeaderNavigation } from "./HeaderNavigationMobile.hooks";
 import { Drawer } from "@/app/components/Drawer/Drawer";
 import { Bars3BottomLeftIcon } from "@heroicons/react/24/solid";
 
-export function HeaderNavigation() {
+export function HeaderNavigationMobile() {
   const { classes } = useHeaderNavigation();
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
 

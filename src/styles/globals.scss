@@ -1,16 +1,21 @@
 @use "mixins";
 @use "layout";
+@use "variables";
 @use "bootstrap-grid";
 @use "@/../public/css/clash-display";
 
 :root {
   --background: #242424;
   --foreground: #fff;
+  @each $key, $value in variables.$spacings {
+    --#{$key}: #{$value};
+  }
 }
 
 html,
 body {
-  margin: 0 auto;
+  height: 100%;
+  margin: 0;
   max-width: 1440px;
   overflow-x: hidden;
   font-family: 'ClashDisplay-bold', sans-serif;

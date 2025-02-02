@@ -1,6 +1,6 @@
 export const fetchPokemonData = async ({
-  offset = 0,
-  limit = 10,
+  offset,
+  limit,
 }: {
   offset: number;
   limit: number;

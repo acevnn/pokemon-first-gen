@@ -6,8 +6,7 @@ interface SVGRProps {
   titleId?: string;
 }
 
-// eslint-disable-next-line react/destructuring-assignment
-export function IconArrowLeft({
+export function IconSearch({
   title,
   titleId,
   ...props
