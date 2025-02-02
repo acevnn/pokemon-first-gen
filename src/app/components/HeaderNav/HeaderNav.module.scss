@@ -1,0 +1,23 @@
+.header-nav {
+  display: flex;
+  justify-content: center;
+
+  &__list {
+    display: flex;
+    gap: 12px;
+    position: relative;
+    z-index: 23;
+    color: #ffdfdf;
+
+    a {
+      font-family: 'ClashDisplay-Regular', 'sans-serif';
+      transform: scale(1);
+      transition: transform 0.2s ease;
+
+      &:hover {
+        transform: scale(1.1);
+        color: #E54222;
+      }
+    }
+  }
+}

@@ -22,24 +22,28 @@ const PokemonList = ({
   const [isLoading, setIsLoading] = useState(false);
   const sentinelRef = useRef<HTMLDivElement | null>(null);
 
-  const loadMorePokemon = useCallback(async (offset: number) => {
-    try {
-      setIsLoading(true);
-      const newPokemon = await fetchPokemonData({ offset, limit });
+  const loadMorePokemon = useCallback(
+    async (offset: number) => {
+      if (pokemon.length >= totalItems) return;
+      try {
+        setIsLoading(true);
+        const newPokemon = await fetchPokemonData({ offset, limit });
 
-      setPokemon((prev) => {
-        const existingNames = new Set(prev.map((poke) => poke.name));
-        const filteredNewPokemon = newPokemon.filter(
-          (poke) => !existingNames.has(poke.name),
-        );
-        return [...prev, ...filteredNewPokemon];
-      });
-    } catch (err) {
-      setError("Failed to load Pokémon data. Please try again later.");
-    } finally {
-      setIsLoading(false);
-    }
-  }, []);
+        setPokemon((prev) => {
+          const existingNames = new Set(prev.map((poke) => poke.name));
+          const filteredNewPokemon = newPokemon.filter(
+            (poke) => !existingNames.has(poke.name),
+          );
+          return [...prev, ...filteredNewPokemon];
+        });
+      } catch (err) {
+        setError("Failed to load Pokémon data. Please try again later.");
+      } finally {
+        setIsLoading(false);
+      }
+    },
+    [pokemon.length, totalItems],
+  );
 
   useEffect(() => {
     const fetchInitialPokemon = async () => {

@@ -1,4 +1,4 @@
-import styles from "./HeaderNavigation.module.scss";
+import styles from "./HeaderNavigationMobile.module.scss";
 
 export const useHeaderNavigation = () => {
   const classes = {

@@ -6,6 +6,7 @@ export function useHeader() {
     headerLogo: styles["header__logo"],
     headerNav: styles["header__nav-links"],
     headerSearch: styles["header__search"],
+    headerSearchIcon: styles["header__search-icon"],
     headerText: styles["header__text"],
     headerLogoWrapper: styles["header__logo-wrapper"],
     visible: styles.visible,

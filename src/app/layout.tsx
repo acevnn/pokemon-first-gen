@@ -5,6 +5,7 @@ import Image from "next/image";
 import Cover from "@/assets/Images/pokemon-cover.jpg";
 import styles from "./layout.module.scss";
 import Head from "next/head";
+import { Footer } from "@/Footer/Footer";
 
 export const metadata: Metadata = {
   title: "Pokemon's",
@@ -54,15 +55,14 @@ export default function RootLayout({
           src={Cover}
           alt={"Cover image of Pokémon"}
           className={styles["image-cover"]}
+          priority
         />
         <Header />
 
         <main className={`${styles["layout-wrapper"]} container`}>
           {children}
         </main>
-        <footer>
-          <p>© 2024 Pokedex App. All Rights Reserved.</p>
-        </footer>
+        <Footer />
       </body>
     </html>
   );

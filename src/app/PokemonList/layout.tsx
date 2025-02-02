@@ -8,11 +8,7 @@ export default function PokemonListLayout({
 }) {
   const { classes } = usePokemonList();
   return (
-    <section
-      className={classes.PokemonWrapper}
-      aria-labelledby="pokemon-list-header"
-    >
-      <h2 className={classes.LayoutPokemonListHeader}>List of all Rokemons</h2>
+    <section className={classes.PokemonWrapper} aria-label="List of Pokemons">
       <article className={classes.LayoutPokemonListWrapper}>{children}</article>
     </section>
   );
