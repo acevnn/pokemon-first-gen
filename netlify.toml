@@ -1,0 +1,9 @@
+[build]
+command = "npm run build"  # Build command
+publish = ".next"  # Output directory for Next.js
+base = ""  # Keep this empty unless your project is inside a subfolder
+
+[[redirects]]
+from = "/*"
+to = "/index.html"
+status = 200
