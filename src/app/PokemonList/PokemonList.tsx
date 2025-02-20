@@ -36,26 +36,23 @@ const PokemonList = ({
           );
           return [...prev, ...filteredNewPokemon];
         });
-      } catch (err) {
+      } catch (error) {
+        console.error(error);
         setError("Failed to load Pokémon data. Please try again later.");
       } finally {
         setIsLoading(false);
       }
     },
-    [pokemon.length, totalItems],
+    [pokemon.length, totalItems, limit],
   );
 
+  // ✅ Fixed: Moved async function inside useEffect scope
   useEffect(() => {
-    const fetchInitialPokemon = async () => {
-      if (pokemon.length === 0) {
-        await loadMorePokemon(0);
-      }
-    };
-
-    fetchInitialPokemon();
+    if (pokemon.length === 0) {
+      loadMorePokemon(0);
+    }
   }, [loadMorePokemon, pokemon.length]);
 
-  // IntersectionObserver for infinite scrolling
   useEffect(() => {
     const observer = new IntersectionObserver(
       async (entries) => {
@@ -66,7 +63,7 @@ const PokemonList = ({
           await loadMorePokemon(offset);
         }
       },
-      { threshold: 1.0 }, // Trigger when fully visible
+      { threshold: 1.0 },
     );
 
     if (sentinelRef.current) {
@@ -80,15 +77,6 @@ const PokemonList = ({
     };
   }, [loadMorePokemon, pokemon.length, totalItems, isLoading]);
 
-  if (error) {
-    return (
-      <div>
-        <p>{error}</p>
-        <button onClick={() => setError(null)}>Retry</button>
-      </div>
-    );
-  }
-  useEffect(() => {}, [pokemon]);
   useEffect(() => {
     return () => {
       setPokemon([]);
@@ -96,6 +84,7 @@ const PokemonList = ({
   }, []);
 
   const toggleText = `Show ${isFrontView ? "Front" : "Back"} View`;
+
   return (
     <>
       <Image
