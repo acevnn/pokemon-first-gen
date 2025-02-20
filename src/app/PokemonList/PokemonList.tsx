@@ -17,7 +17,6 @@ const PokemonList = ({
 }) => {
   const { classes } = usePokemonList();
   const [isFrontView, setIsFrontView] = useState(false);
-  const [error, setError] = useState<string | null>(null);
   const [pokemon, setPokemon] = useState<Pokemon[]>([]);
   const [isLoading, setIsLoading] = useState(false);
   const sentinelRef = useRef<HTMLDivElement | null>(null);
@@ -36,9 +35,8 @@ const PokemonList = ({
           );
           return [...prev, ...filteredNewPokemon];
         });
-      } catch (error) {
-        console.error(error);
-        setError("Failed to load Pokémon data. Please try again later.");
+      } catch (err) {
+        console.error(err);
       } finally {
         setIsLoading(false);
       }
