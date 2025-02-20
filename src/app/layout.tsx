@@ -3,9 +3,10 @@ import React from "react";
 import Header from "@/app/Header/Header";
 import Image from "next/image";
 import Cover from "@/assets/Images/pokemon-cover.jpg";
-import styles from "./layout.module.scss";
 import Head from "next/head";
-import { Footer } from "@/Footer/Footer";
+import { Footer } from "@/app/Footer/Footer";
+import styles from "./layout.module.scss";
+import "@/styles/globals.scss/";
 
 export const metadata: Metadata = {
   title: "Pokemon's",

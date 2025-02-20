@@ -8,7 +8,7 @@ export const fetchPokemonData = async ({
   try {
     const res = await fetch(
       `https://pokeapi.co/api/v2/pokemon?offset=${offset}&limit=${limit}`,
-      { cache: "force-cache" },
+      { cache: "no-store" },
     );
 
     if (!res.ok) {

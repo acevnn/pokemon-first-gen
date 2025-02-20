@@ -1,5 +1,9 @@
 @use "mixins";
 
+:root {
+  --font-preset-heading-1: normal normal 700 3rem/3.25rem 'ClashDisplay-Regular', sans-serif;
+}
+
 @include mixins.media-query('xlg') {
   :root {
     --font-preset-heading-1: normal normal 700 3.75rem/4.5rem 'ClashDisplay-Regular', sans-serif;
@@ -46,7 +50,7 @@
   }
 }
 
-@media only screen and (min-width: 672px) and (max-width: 1055px) {
+@media only screen and (min-width: 768px) and (max-width: 1200px) {
   :root {
     --font-preset-heading-1: normal normal 700 3rem/3.25rem 'ClashDisplay-Regular', sans-serif;
     --font-preset-heading-2: normal normal 700 2.25rem/2.375rem 'ClashDisplay-Regular', sans-serif;
@@ -69,7 +73,7 @@
   }
 }
 
-@media only screen and (max-width: 671px) {
+@media only screen and (min-width: 375px) and (max-width: 768px) {
   :root {
     --font-preset-heading-1: normal normal 700 2.625rem/2.375rem 'ClashDisplay-Regular', sans-serif;
     --font-preset-heading-2: normal normal 700 1.875rem/1.875rem 'ClashDisplay-Regular', sans-serif;

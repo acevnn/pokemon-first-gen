@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
 import Link from "next/link";
 import "./Header.module.scss";
 import { useHeader } from "@/app/Header/Header.hooks";
@@ -9,11 +9,19 @@ import pokeLogo from "@/assets/Images/poke-logo.svg";
 import { HeaderNavigationMobile } from "@/app/components/HeaderNavigationMobile/HeaderNavigationMobile";
 import { HeaderNav } from "@/app/components/HeaderNav/HeaderNav";
 import useBreakpoints from "@/utils/grid";
-import { IconSearch } from "@/assets/Icons/Search";
+import { IconSearch } from "@/assets/Icons/Search/Search";
 
 function Header() {
   const { classes } = useHeader();
   const { isMobile } = useBreakpoints();
+  const [toggle, setToggle] = useState(false);
+
+  function handleToggleInput() {
+    setToggle((prev) => !prev);
+    if (toggle) {
+      return true;
+    }
+  }
 
   return (
     <>
@@ -47,8 +55,13 @@ function Header() {
         )}
 
         <div className={classes.headerSearch}>
-          <IconSearch className={classes.headerSearchIcon} />
+          <IconSearch
+            className={`${classes.headerSearchIcon} ${toggle ? `${classes.headerSearchToggle}` : ""}`}
+          />
           <input
+            className={`${classes.headerSearchInput} ${toggle ? `${classes.headerInputToggle}` : ""}`}
+            onClick={handleToggleInput}
+            onBlur={() => setToggle(false)}
             type="text"
             placeholder="Search Pokémon..."
             aria-label="Search Pokémon"
