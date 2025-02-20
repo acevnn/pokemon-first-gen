@@ -46,7 +46,6 @@ const PokemonList = ({
     [pokemon.length, totalItems, limit],
   );
 
-  // ✅ Fixed: Moved async function inside useEffect scope
   useEffect(() => {
     if (pokemon.length === 0) {
       loadMorePokemon(0);
