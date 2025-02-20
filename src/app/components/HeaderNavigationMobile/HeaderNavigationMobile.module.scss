@@ -1,10 +1,17 @@
+@use '@/styles/mixins';
+
 .header-navigation {
   &__toggle {
     background: transparent;
     outline: none;
     border: none;
     color: inherit;
-    width: 24px;
-    height: 24px;
+    width: var(--spacing-5);
+    height: var(--spacing-5);
+
+    @include mixins.media-query('xs') {
+      width: var(--spacing-6);
+      height: var(--spacing-6);
+    }
   }
 }

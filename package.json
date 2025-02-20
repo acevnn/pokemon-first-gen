@@ -21,8 +21,6 @@
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
-    "@types/webpack": "^5.28.5",
-    "@webpack-cli/remove": "^0.1.8",
     "eslint": "^9",
     "eslint-config-next": "15.1.0",
     "typescript": "^5"

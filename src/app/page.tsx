@@ -1,7 +1,6 @@
-import "@/styles/globals.scss/";
-import styles from "./page.module.scss";
 import React from "react";
 import Link from "next/link";
+import styles from "./page.module.scss";
 
 export default function HomePage() {
   return (

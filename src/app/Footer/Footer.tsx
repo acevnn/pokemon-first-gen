@@ -1,6 +1,6 @@
 import React from "react";
 import Image from "next/image";
-import { useFooter } from "@/Footer/Footer.hooks";
+import { useFooter } from "./Footer.hooks";
 import "./Footer.module.scss";
 import pokeLogo from "@/assets/Images/poke-logo.svg";
 

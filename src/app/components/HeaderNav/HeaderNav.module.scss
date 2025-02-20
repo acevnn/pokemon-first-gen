@@ -4,9 +4,9 @@
 
   &__list {
     display: flex;
-    gap: 12px;
+    gap: var(--spacing-4);
     position: relative;
-    z-index: 23;
+    //z-index: 23;
     color: #ffdfdf;
 
     a {
