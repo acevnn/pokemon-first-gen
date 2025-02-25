@@ -137,7 +137,6 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$assets$2f$Images$2f$a
 const PokemonList = ({ totalItems = 151, limit = 20 })=>{
     const { classes } = (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$PokemonList$2f$PokemonList$2e$hooks$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["usePokemonList"])();
     const [isFrontView, setIsFrontView] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(false);
-    const [error, setError] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(null);
     const [pokemon, setPokemon] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])([]);
     const [isLoading, setIsLoading] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(false);
     const sentinelRef = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useRef"])(null);
@@ -157,9 +156,8 @@ const PokemonList = ({ totalItems = 151, limit = 20 })=>{
                     ...filteredNewPokemon
                 ];
             });
-        } catch (error) {
-            console.error(error);
-            setError("Failed to load Pokémon data. Please try again later.");
+        } catch (err) {
+            console.error(err);
         } finally{
             setIsLoading(false);
         }
@@ -217,7 +215,7 @@ const PokemonList = ({ totalItems = 151, limit = 20 })=>{
                 alt: "Image of pokemon trainer Ash Ketchup"
             }, void 0, false, {
                 fileName: "[project]/src/app/PokemonList/PokemonList.tsx",
-                lineNumber: 89,
+                lineNumber: 87,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -240,7 +238,7 @@ const PokemonList = ({ totalItems = 151, limit = 20 })=>{
                                             height: 87
                                         }, void 0, false, {
                                             fileName: "[project]/src/app/PokemonList/PokemonList.tsx",
-                                            lineNumber: 105,
+                                            lineNumber: 103,
                                             columnNumber: 17
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
@@ -248,30 +246,30 @@ const PokemonList = ({ totalItems = 151, limit = 20 })=>{
                                             children: poke.name
                                         }, void 0, false, {
                                             fileName: "[project]/src/app/PokemonList/PokemonList.tsx",
-                                            lineNumber: 113,
+                                            lineNumber: 111,
                                             columnNumber: 17
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
                                             children: poke.detailed
                                         }, void 0, false, {
                                             fileName: "[project]/src/app/PokemonList/PokemonList.tsx",
-                                            lineNumber: 114,
+                                            lineNumber: 112,
                                             columnNumber: 17
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/src/app/PokemonList/PokemonList.tsx",
-                                    lineNumber: 104,
+                                    lineNumber: 102,
                                     columnNumber: 15
                                 }, this)
                             }, `${poke.name}-${index}`, false, {
                                 fileName: "[project]/src/app/PokemonList/PokemonList.tsx",
-                                lineNumber: 100,
+                                lineNumber: 98,
                                 columnNumber: 13
                             }, this))
                     }, void 0, false, {
                         fileName: "[project]/src/app/PokemonList/PokemonList.tsx",
-                        lineNumber: 98,
+                        lineNumber: 96,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -280,18 +278,18 @@ const PokemonList = ({ totalItems = 151, limit = 20 })=>{
                             children: "Loading more Pokémon..."
                         }, void 0, false, {
                             fileName: "[project]/src/app/PokemonList/PokemonList.tsx",
-                            lineNumber: 120,
+                            lineNumber: 118,
                             columnNumber: 25
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/src/app/PokemonList/PokemonList.tsx",
-                        lineNumber: 119,
+                        lineNumber: 117,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/src/app/PokemonList/PokemonList.tsx",
-                lineNumber: 97,
+                lineNumber: 95,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -303,12 +301,12 @@ const PokemonList = ({ totalItems = 151, limit = 20 })=>{
                     children: toggleText
                 }, void 0, false, {
                     fileName: "[project]/src/app/PokemonList/PokemonList.tsx",
-                    lineNumber: 124,
+                    lineNumber: 122,
                     columnNumber: 9
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/src/app/PokemonList/PokemonList.tsx",
-                lineNumber: 123,
+                lineNumber: 121,
                 columnNumber: 7
             }, this)
         ]
