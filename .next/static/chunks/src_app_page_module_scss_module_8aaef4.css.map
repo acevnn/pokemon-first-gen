@@ -1,7 +1,0 @@
-{
-  "version": 3,
-  "sources": [],
-  "sections": [
-    {"offset": {"line": 1, "column": 0}, "map": {"version":3,"sources":["file://C%3A/Users/Nino/Desktop/next%20i%20za%20kaj%20mene%20vo%20pc/NextJsCourseProject/pokemon1stgen/src/app/page.module.scss.module.css"],"sourcesContent":[".hero__heading{font:var(--font-preset-heading-2);text-align:center}.hero__text{font-weight:400;font-size:36px;line-height:44px}.hero__wrapper{width:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:32px;flex-grow:1}.hero__cta{padding:12px 16px;border-radius:8px;background:#00ff9f;gap:10px;border:none;outline:none}.hero__cta:hover{cursor:pointer}"],"names":[],"mappings":"AAAA;;;;;AAAmE;;;;;;AAA4D;;;;;;;;;;AAA4H;;;;;;;;;AAAoG"}},
-    {"offset": {"line": 34, "column": 0}, "map": {"version":3,"sources":[],"names":[],"mappings":"A"}}]
-}
