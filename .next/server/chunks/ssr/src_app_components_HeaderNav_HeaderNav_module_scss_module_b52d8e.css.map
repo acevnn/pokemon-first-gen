@@ -1,7 +1,0 @@
-{
-  "version": 3,
-  "sources": [],
-  "sections": [
-    {"offset": {"line": 1, "column": 0}, "map": {"version":3,"sources":["turbopack://[project]/src/app/components/HeaderNav/HeaderNav.module.scss.module.css"],"sourcesContent":[".header-nav{display:flex;justify-content:center}.header-nav__list{display:flex;gap:var(--spacing-4);position:relative;color:#ffdfdf}.header-nav__list a{font-family:\"ClashDisplay-Regular\",\"sans-serif\";transform:scale(1);transition:transform .2s ease}.header-nav__list a:hover{transform:scale(1.1);color:#e54222}"],"names":[],"mappings":"AAAA;;;;;AAAgD;;;;;;;AAAoF;;;;;;AAAqH"}},
-    {"offset": {"line": 23, "column": 0}, "map": {"version":3,"sources":[],"names":[],"mappings":"A"}}]
-}
