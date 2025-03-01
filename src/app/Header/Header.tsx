@@ -33,7 +33,7 @@ function Header() {
                 <Image
                   width={48}
                   height={48}
-                  src={require("@/assets/Images/poke-logo.svg")}
+                  src={pokeLogo}
                   alt="Pokéball"
                   priority
                 />
