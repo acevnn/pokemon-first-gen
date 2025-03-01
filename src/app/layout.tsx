@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import React from "react";
 import Header from "@/app/Header/Header";
 import Image from "next/image";
-import Cover from "/assets/Images/pokemon-cover.jpg";
+import Cover from "public/assets/Images/pokemon-cover.jpg";
 import Head from "next/head";
 import { Footer } from "@/app/Footer/Footer";
 import styles from "./layout.module.scss";

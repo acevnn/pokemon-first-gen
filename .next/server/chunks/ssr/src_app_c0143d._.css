@@ -1,0 +1,203 @@
+/* [project]/src/app/Header/Header.module.scss.module.css [app-client] (css) */
+.Header-module-scss-module__cbhb_a__header {
+  min-width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 4px;
+  position: relative;
+  z-index: 10;
+}
+
+.Header-module-scss-module__cbhb_a__header__mobile {
+  display: flex;
+  gap: 4px;
+}
+
+.Header-module-scss-module__cbhb_a__header__logo-wrapper {
+  display: flex;
+  gap: 12px;
+}
+
+.Header-module-scss-module__cbhb_a__header__logo-wrapper a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 6px;
+}
+
+.Header-module-scss-module__cbhb_a__header__logo-wrapper a img {
+  display: none;
+}
+
+@media (width >= 601px) {
+  .Header-module-scss-module__cbhb_a__header__logo-wrapper a img {
+    display: block;
+    width: var(--spacing-6);
+    height: var(--spacing-6);
+  }
+}
+
+.Header-module-scss-module__cbhb_a__header__text {
+  color: #fff;
+  font-family: Pokemon-Solid, sans-serif;
+  cursor: pointer;
+}
+
+.Header-module-scss-module__cbhb_a__header__search {
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  border: 1px solid #dedede;
+  border-radius: 6px;
+  padding: 4px 12px;
+}
+
+@media (width >= 601px) {
+  .Header-module-scss-module__cbhb_a__header__search {
+    padding: 4px 12px;
+  }
+}
+
+.Header-module-scss-module__cbhb_a__header__search-icon {
+  width: 12px;
+  height: 12px;
+  cursor: pointer;
+  color: #cbcbcb;
+  transition: color 1s ease-in-out, transform 1s ease-in-out;
+  display: none;
+}
+
+.Header-module-scss-module__cbhb_a__header__search-icon:hover {
+  color: #e54222;
+  transition: color 1.1s ease-in-out, transform .7s ease-in-out;
+  transform: scale(1.1);
+}
+
+.Header-module-scss-module__cbhb_a__header__icon-toggle {
+  display: block;
+}
+
+.Header-module-scss-module__cbhb_a__header__search-input {
+  width: var(--spacing-5);
+  border: none;
+  outline: none;
+  flex: 1;
+  color: #e54222;
+  transition: width .3s;
+}
+
+.Header-module-scss-module__cbhb_a__header__search-input::placeholder {
+  color: #cbcbcb;
+  font: var(--font-preset-label-3);
+}
+
+.Header-module-scss-module__cbhb_a__header__input-toggle {
+  width: 100px;
+  opacity: 1;
+}
+
+
+/* [project]/src/app/components/HeaderNavigationMobile/HeaderNavigationMobile.module.scss.module.css [app-client] (css) */
+.HeaderNavigationMobile-module-scss-module__Gpzqzq__header-navigation__toggle {
+  background: none;
+  outline: none;
+  border: none;
+  color: inherit;
+  width: var(--spacing-5);
+  height: var(--spacing-5);
+}
+
+@media (width >= 601px) {
+  .HeaderNavigationMobile-module-scss-module__Gpzqzq__header-navigation__toggle {
+    width: var(--spacing-6);
+    height: var(--spacing-6);
+  }
+}
+
+
+/* [project]/src/app/components/Drawer/Drawer.module.scss.module.css [app-client] (css) */
+.Drawer-module-scss-module__I7zYlq__drawer {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: space-between;
+  position: fixed;
+  inset-block-start: 0;
+  block-size: 100%;
+  inline-size: 300px;
+  background-color: #000;
+  box-shadow: var(--spacing-1) 0 5px #00000080;
+  transition: transform .3s ease-in-out;
+  inset-inline-start: 0;
+  transform: translateX(-100%);
+  z-index: 2;
+  color: #fff;
+  max-inline-size: 100%;
+  border-top-right-radius: var(--spacing-4);
+  border-bottom-right-radius: var(--spacing-4);
+  padding: var(--spacing-4);
+}
+
+.Drawer-module-scss-module__I7zYlq__drawer svg {
+  width: var(--spacing-4);
+  height: var(--spacing-4);
+  stroke: none;
+  fill: #fff;
+}
+
+.Drawer-module-scss-module__I7zYlq__drawer__open {
+  transform: translateX(0);
+}
+
+.Drawer-module-scss-module__I7zYlq__drawer__open:before {
+  position: absolute;
+  background-color: #00000080;
+  pointer-events: none;
+  block-size: 100vh;
+  inline-size: 200vw;
+  z-index: -1;
+  content: "";
+  left: 0;
+  margin-top: -16px;
+}
+
+.Drawer-module-scss-module__I7zYlq__drawer__shadow {
+  box-shadow: 0 0;
+}
+
+.Drawer-module-scss-module__I7zYlq__drawer__header-nav {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-4);
+}
+
+
+/* [project]/src/app/components/HeaderNav/HeaderNav.module.scss.module.css [app-client] (css) */
+.HeaderNav-module-scss-module__b7o-3a__header-nav {
+  display: flex;
+  justify-content: center;
+}
+
+.HeaderNav-module-scss-module__b7o-3a__header-nav__list {
+  display: flex;
+  gap: var(--spacing-4);
+  position: relative;
+  color: #ffdfdf;
+}
+
+.HeaderNav-module-scss-module__b7o-3a__header-nav__list a {
+  font-family: ClashDisplay-Regular, "sans-serif";
+  transform: scale(1);
+  transition: transform .2s;
+}
+
+.HeaderNav-module-scss-module__b7o-3a__header-nav__list a:hover {
+  transform: scale(1.1);
+  color: #e54222;
+}
+
+
+/*# sourceMappingURL=src_app_c0143d._.css.map*/

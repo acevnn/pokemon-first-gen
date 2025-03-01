@@ -5,7 +5,7 @@ import Link from "next/link";
 import "./Header.module.scss";
 import { useHeader } from "@/app/Header/Header.hooks";
 import Image from "next/image";
-import pokeLogo from "/assets/Images/poke-logo.svg";
+import pokeLogo from "public/assets/Images/poke-logo.svg";
 import { HeaderNavigationMobile } from "@/app/components/HeaderNavigationMobile/HeaderNavigationMobile";
 import { HeaderNav } from "@/app/components/HeaderNav/HeaderNav";
 import useBreakpoints from "@/utils/grid";

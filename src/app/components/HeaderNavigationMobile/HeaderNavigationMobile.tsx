@@ -18,8 +18,7 @@ export function HeaderNavigationMobile() {
       <button
         onClick={toggleDrawer}
         aria-label="Open navigation drawer"
-        className={classes.headerNavigationToggle}
-      >
+        className={classes.headerNavigationToggle}>
         <Bars3BottomLeftIcon />
       </button>
 

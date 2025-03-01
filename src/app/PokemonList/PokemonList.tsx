@@ -6,7 +6,7 @@ import { usePokemonList } from "@/app/PokemonList/PokemonList.hooks";
 import { Pokemon } from "@/types/pokemonTypes";
 import { fetchPokemonData } from "@/utils/pokemonData";
 import "./PokemonList.module.scss";
-import Ash from "/assets/Images/ash-kepa4.png";
+import Ash from "public/assets/Images/ash-kepa4.png";
 
 const PokemonList = ({
   totalItems = 151,
