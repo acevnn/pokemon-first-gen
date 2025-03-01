@@ -16,22 +16,6 @@ const nextConfig: NextConfig = {
       },
     ],
   },
-  webpack: (config) => {
-    config.module.rules.push({
-      test: /\.(svg|png|jpg|gif|webp)$/,
-      type: "asset/resource",
-      generator: {
-        filename: "static/media/[name].[hash][ext]",
-      },
-    });
-    return config;
-  },
-};
-
-module.exports = {
-  images: {
-    domains: ["https://firstgenn.netlify.app/"],
-  },
 };
 
 export default nextConfig;

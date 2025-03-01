@@ -9,7 +9,7 @@ import pokeLogo from "@/assets/Images/poke-logo.svg";
 import { HeaderNavigationMobile } from "@/app/components/HeaderNavigationMobile/HeaderNavigationMobile";
 import { HeaderNav } from "@/app/components/HeaderNav/HeaderNav";
 import useBreakpoints from "@/utils/grid";
-import { IconSearch } from "@/assets/Icons/Search/Search";
+import { IconSearch } from "public/assets/Icons/Search/Search";
 
 function Header() {
   const { classes } = useHeader();

@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import React from "react";
 import Header from "@/app/Header/Header";
 import Image from "next/image";
-import Cover from "@/assets/Images/pokemon-cover.jpg";
+import Cover from "/assets/Images/pokemon-cover.jpg";
 import Head from "next/head";
 import { Footer } from "@/app/Footer/Footer";
 import styles from "./layout.module.scss";
@@ -33,8 +33,7 @@ export default function RootLayout({
             width="1066"
             height="799"
             viewBox="0 0 1066 799"
-            fill="none"
-          >
+            fill="none">
             <path
               d="M676.505 266.333C676.505 413.425 525.064 532.666 338.252 532.666C151.441 532.666 0 413.425 0 266.333C0 119.241 151.441 0 338.252 0C525.064 0 676.505 119.241 676.505 266.333Z"
               fill="#00FF9F"

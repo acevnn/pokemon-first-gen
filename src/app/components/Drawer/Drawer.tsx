@@ -3,7 +3,7 @@
 import React, { useEffect, useRef } from "react";
 import { useDrawer } from "./Drawer.hooks";
 import Link from "next/link";
-import { IconClose } from "@/assets/Icons/Close/Close";
+import { IconClose } from "public/assets/Icons/Close/Close";
 
 export interface DrawerProps {
   isOpen: boolean;
@@ -39,8 +39,7 @@ export function Drawer(props: DrawerProps) {
   return (
     <div
       ref={drawerRef}
-      className={`${classes.drawer} ${isOpen ? classes.drawerIsOpen : ""} ${!isOpen ? classes.drawerShadow : ""} `}
-    >
+      className={`${classes.drawer} ${isOpen ? classes.drawerIsOpen : ""} ${!isOpen ? classes.drawerShadow : ""} `}>
       <ul className={classes.drawerNavList}>
         <nav className={classes.drawerHeaderNav}>
           <Link href="/" onClick={toggleDrawer}>
