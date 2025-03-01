@@ -1,21 +1,47 @@
 {
   "pages": {
+    "/_not-found/page": [
+      "static/chunks/webpack-09abb8977d8f4edb.js",
+      "static/chunks/4bd1b696-5ea46cab379216e0.js",
+      "static/chunks/517-b8e9b5dbc6004a20.js",
+      "static/chunks/main-app-5412c2c6388b913a.js",
+      "static/chunks/app/_not-found/page-799a331fd468962a.js"
+    ],
+    "/layout": [
+      "static/chunks/webpack-09abb8977d8f4edb.js",
+      "static/chunks/4bd1b696-5ea46cab379216e0.js",
+      "static/chunks/517-b8e9b5dbc6004a20.js",
+      "static/chunks/main-app-5412c2c6388b913a.js",
+      "static/css/f7dacee0ca1bb25b.css",
+      "static/chunks/565-0dc999824fd11f14.js",
+      "static/chunks/173-3f755b36155f30ab.js",
+      "static/chunks/app/layout-8b46d967936954a6.js"
+    ],
     "/page": [
-      "static/chunks/node_modules_bd2c2c._.js",
-      "static/chunks/src_886ff2._.js",
-      "static/chunks/src_f8fd26._.css",
-      "static/chunks/src_app_layout_tsx_61af54._.js",
-      "static/chunks/src_app_page_module_scss_module_8aaef4.css",
-      "static/chunks/src_app_page_tsx_8b213b._.js",
-      "static/chunks/src_app_page_tsx_5e97b1._.js",
-      "static/chunks/node_modules_next_dist_compiled_react-dom_1f56dc._.js",
-      "static/chunks/node_modules_next_dist_compiled_107ce8._.js",
-      "static/chunks/node_modules_next_dist_client_523921._.js",
-      "static/chunks/node_modules_next_dist_4bb10e._.js",
-      "static/chunks/node_modules_@swc_helpers_cjs_00636a._.js",
-      "static/chunks/[turbopack]_browser_dev_hmr-client_hmr-client_ts_d0a96d._.js",
-      "static/chunks/_e69f0d._.js",
-      "static/chunks/_d95469._.js"
+      "static/chunks/webpack-09abb8977d8f4edb.js",
+      "static/chunks/4bd1b696-5ea46cab379216e0.js",
+      "static/chunks/517-b8e9b5dbc6004a20.js",
+      "static/chunks/main-app-5412c2c6388b913a.js",
+      "static/css/461d8b9d15887f22.css",
+      "static/chunks/173-3f755b36155f30ab.js",
+      "static/chunks/app/page-127dc7408d11fff0.js"
+    ],
+    "/PokemonList/layout": [
+      "static/chunks/webpack-09abb8977d8f4edb.js",
+      "static/chunks/4bd1b696-5ea46cab379216e0.js",
+      "static/chunks/517-b8e9b5dbc6004a20.js",
+      "static/chunks/main-app-5412c2c6388b913a.js",
+      "static/css/9197733f01cbbde8.css",
+      "static/chunks/app/PokemonList/layout-b23e0c9ddd8d89f5.js"
+    ],
+    "/PokemonList/page": [
+      "static/chunks/webpack-09abb8977d8f4edb.js",
+      "static/chunks/4bd1b696-5ea46cab379216e0.js",
+      "static/chunks/517-b8e9b5dbc6004a20.js",
+      "static/chunks/main-app-5412c2c6388b913a.js",
+      "static/css/9197733f01cbbde8.css",
+      "static/chunks/565-0dc999824fd11f14.js",
+      "static/chunks/app/PokemonList/page-0f2c95ea260f7fd2.js"
     ]
   }
 }

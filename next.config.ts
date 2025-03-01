@@ -31,7 +31,6 @@ const nextConfig: NextConfig = {
 module.exports = {
   images: {
     domains: ["https://firstgenn.netlify.app/"],
-    unomptimized: true,
   },
 };
 
