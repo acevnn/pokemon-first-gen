@@ -2,7 +2,7 @@ import React from "react";
 import Image from "next/image";
 import { useFooter } from "./Footer.hooks";
 import "./Footer.module.scss";
-import pokeLogo from "@/assets/Images/poke-logo.svg";
+import pokeLogo from "/assets/Images/poke-logo.svg";
 
 export function Footer() {
   const { classes } = useFooter();

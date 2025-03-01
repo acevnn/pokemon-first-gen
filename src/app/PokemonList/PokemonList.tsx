@@ -6,7 +6,7 @@ import { usePokemonList } from "@/app/PokemonList/PokemonList.hooks";
 import { Pokemon } from "@/types/pokemonTypes";
 import { fetchPokemonData } from "@/utils/pokemonData";
 import "./PokemonList.module.scss";
-import Ash from "@/assets/Images/ash-kepa4.png";
+import Ash from "/assets/Images/ash-kepa4.png";
 
 const PokemonList = ({
   totalItems = 151,
@@ -31,7 +31,7 @@ const PokemonList = ({
         setPokemon((prev) => {
           const existingNames = new Set(prev.map((poke) => poke.name));
           const filteredNewPokemon = newPokemon.filter(
-            (poke) => !existingNames.has(poke.name),
+            (poke) => !existingNames.has(poke.name)
           );
           return [...prev, ...filteredNewPokemon];
         });
@@ -41,7 +41,7 @@ const PokemonList = ({
         setIsLoading(false);
       }
     },
-    [pokemon.length, totalItems, limit],
+    [pokemon.length, totalItems, limit]
   );
 
   useEffect(() => {
@@ -60,7 +60,7 @@ const PokemonList = ({
           await loadMorePokemon(offset);
         }
       },
-      { threshold: 1.0 },
+      { threshold: 1.0 }
     );
 
     if (sentinelRef.current) {
@@ -97,8 +97,7 @@ const PokemonList = ({
           {pokemon.map((poke, index) => (
             <li
               className={classes.PokemonListWrapperItem}
-              key={`${poke.name}-${index}`}
-            >
+              key={`${poke.name}-${index}`}>
               <div className={classes.PokemonListContentWrapper}>
                 <Image
                   loading="lazy"
@@ -122,8 +121,7 @@ const PokemonList = ({
         <button
           aria-label={toggleText}
           className={classes.PokemonListToggleView}
-          onClick={() => setIsFrontView((prev) => !prev)}
-        >
+          onClick={() => setIsFrontView((prev) => !prev)}>
           {toggleText}
         </button>
       </div>
