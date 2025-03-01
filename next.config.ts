@@ -20,6 +20,9 @@ const nextConfig: NextConfig = {
     config.module.rules.push({
       test: /\.(svg|png|jpg|gif|webp)$/,
       type: "asset/resource",
+      generator: {
+        filename: "static/media/[name].[hash][ext]",
+      },
     });
     return config;
   },
@@ -28,6 +31,7 @@ const nextConfig: NextConfig = {
 module.exports = {
   images: {
     domains: ["https://firstgenn.netlify.app/"],
+    unomptimized: true,
   },
 };
 

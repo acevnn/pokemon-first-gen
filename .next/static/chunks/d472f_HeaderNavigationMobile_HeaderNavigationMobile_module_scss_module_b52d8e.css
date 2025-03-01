@@ -1,0 +1,18 @@
+/* [project]/src/app/components/HeaderNavigationMobile/HeaderNavigationMobile.module.scss.module.css [app-client] (css) */
+.HeaderNavigationMobile-module-scss-module__Gpzqzq__header-navigation__toggle {
+  background: none;
+  outline: none;
+  border: none;
+  color: inherit;
+  width: var(--spacing-5);
+  height: var(--spacing-5);
+}
+
+@media (width >= 601px) {
+  .HeaderNavigationMobile-module-scss-module__Gpzqzq__header-navigation__toggle {
+    width: var(--spacing-6);
+    height: var(--spacing-6);
+  }
+}
+
+/*# sourceMappingURL=d472f_HeaderNavigationMobile_HeaderNavigationMobile_module_scss_module_b52d8e.css.map*/

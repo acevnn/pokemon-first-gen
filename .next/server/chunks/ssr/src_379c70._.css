@@ -1,0 +1,326 @@
+/* [project]/src/app/Footer/Footer.module.scss.module.css [app-client] (css) */
+.Footer-module-scss-module__yDKenG__footer {
+  background-color: #111;
+  color: #fff;
+  padding: var(--spacing-4) var(--spacing-5);
+  text-align: center;
+}
+
+.Footer-module-scss-module__yDKenG__footer__content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.Footer-module-scss-module__yDKenG__footer__nav ul {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+}
+
+.Footer-module-scss-module__yDKenG__footer__nav ul li a {
+  color: #bbb;
+  text-decoration: none;
+}
+
+.Footer-module-scss-module__yDKenG__footer__nav ul li a:hover {
+  color: #fff;
+}
+
+.Footer-module-scss-module__yDKenG__footer__social {
+  display: flex;
+  gap: 1rem;
+}
+
+.Footer-module-scss-module__yDKenG__footer__social a {
+  color: #bbb;
+  text-decoration: none;
+}
+
+.Footer-module-scss-module__yDKenG__footer__social a:hover {
+  color: #fff;
+}
+
+.Footer-module-scss-module__yDKenG__footer__copy {
+  display: flex;
+  align-items: center;
+  font-size: .875rem;
+  opacity: .7;
+  gap: 4px;
+}
+
+.Footer-module-scss-module__yDKenG__footer__copy img {
+  width: 16px;
+  height: 16px;
+}
+
+
+/* [project]/src/app/layout.module.scss.module.css [app-client] (css) */
+.layout-module-scss-module__uQLIpG__image-cover {
+  width: 100%;
+  height: 100px;
+  object-fit: cover;
+}
+
+.layout-module-scss-module__uQLIpG__background-wrapper {
+  filter: blur(200px);
+  position: fixed;
+  z-index: -1;
+}
+
+.layout-module-scss-module__uQLIpG__layout-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+
+/* [project]/src/styles/globals.scss.css [app-client] (css) */
+:root {
+  --font-preset-heading-1: normal normal 700 3rem / 3.25rem "ClashDisplay-Regular", sans-serif;
+}
+
+@media (width >= 1440px) {
+  :root {
+    --font-preset-heading-1: normal normal 700 3.75rem / 4.5rem "ClashDisplay-Regular", sans-serif;
+    --font-preset-heading-2: normal normal 700 3rem / 4.125rem "ClashDisplay-Regular", sans-serif;
+    --font-preset-heading-3: normal normal 700 2.25rem / 1.875rem "ClashDisplay-Regular", sans-serif;
+    --font-preset-heading-4: normal normal 700 2.625rem / 3.25rem "ClashDisplay-Regular", sans-serif;
+    --font-preset-heading-5: normal normal 700 1.75rem / 1.75rem "ClashDisplay-Regular", sans-serif;
+    --font-preset-heading-6: normal normal 700 1.375rem / 1.625rem "ClashDisplay-Regular", sans-serif;
+    --font-preset-heading-7: normal normal 700 2.625rem / 3.25rem "ClashDisplay-Regular", sans-serif;
+    --font-preset-heading-8: normal normal 800 3.75rem / 4.5rem "ClashDisplay-Regular", sans-serif;
+    --font-preset-heading-9: normal normal 800 3rem / 3.25rem "ClashDisplay-Regular", sans-serif;
+    --font-preset-heading-10: normal normal 700 1.375rem / 1.625rem "ClashDisplay-Regular", sans-serif;
+    --font-preset-heading-11: normal normal 700 1.875rem / 2.375rem "ClashDisplay-Regular", sans-serif;
+    --font-preset-label-1: normal normal 700 1.125rem / 1.125rem "ClashDisplay-Regular", sans-serif;
+    --font-preset-label-3: normal normal 400 1.125rem / 1.125rem "ClashDisplay-Regular", sans-serif;
+    --font-preset-label-4: normal normal 800 2.25rem / 2.375rem "ClashDisplay-Regular", sans-serif;
+    --font-preset-label-6: normal normal 400 1rem / 1.125rem "ClashDisplay-Regular", sans-serif;
+    --font-preset-label-7: normal normal 700 1.125rem / 1rem "ClashDisplay-Regular", sans-serif;
+    --font-preset-label-8: normal normal 700 1.125rem / 1.25rem "ClashDisplay-Regular", sans-serif;
+    --font-preset-copy-1: normal normal 400 1.75rem / 1.875rem "ClashDisplay-Regular", sans-serif;
+  }
+}
+
+@media (width >= 1200px) {
+  :root {
+    --font-preset-heading-1: normal normal 700 3.75rem / 4.5rem "ClashDisplay-Regular", sans-serif;
+    --font-preset-heading-2: normal normal 700 2.625rem / 3.25rem "ClashDisplay-Regular", sans-serif;
+    --font-preset-heading-3: normal normal 700 1.875rem / 1.625rem "ClashDisplay-Regular", sans-serif;
+    --font-preset-heading-4: normal normal 700 1.875rem / 1.875rem "ClashDisplay-Regular", sans-serif;
+    --font-preset-heading-5: normal normal 700 1.375rem / 1.625rem "ClashDisplay-Regular", sans-serif;
+    --font-preset-heading-6: normal normal 700 1.25rem / 1.5rem "ClashDisplay-Regular", sans-serif;
+    --font-preset-heading-7: normal normal 700 2.25rem / 2.375rem "ClashDisplay-Regular", sans-serif;
+    --font-preset-heading-8: normal normal 800 3rem / 4.125rem "ClashDisplay-Regular", sans-serif;
+    --font-preset-heading-9: normal normal 800 3rem / 3.25rem "ClashDisplay-Regular", sans-serif;
+    --font-preset-heading-10: normal normal 700 1.375rem / 1.625rem "ClashDisplay-Regular", sans-serif;
+    --font-preset-heading-11: normal normal 700 1.875rem / 2.375rem "ClashDisplay-Regular", sans-serif;
+    --font-preset-label-1: normal normal 700 1.125rem / 1.125rem "ClashDisplay-Regular", sans-serif;
+    --font-preset-label-3: normal normal 400 1.125rem / 1.125rem "ClashDisplay-Regular", sans-serif;
+    --font-preset-label-4: normal normal 800 1.875rem / 2.375rem "ClashDisplay-Regular", sans-serif;
+    --font-preset-label-6: normal normal 400 1rem / 1.125rem "ClashDisplay-Regular", sans-serif;
+    --font-preset-label-7: normal normal 700 1.125rem / 1rem "ClashDisplay-Regular", sans-serif;
+    --font-preset-label-8: normal normal 700 1.125rem / 1.25rem "ClashDisplay-Regular", sans-serif;
+    --font-preset-copy-1: normal normal 400 1.75rem / 1.875rem "ClashDisplay-Regular", sans-serif;
+  }
+}
+
+@media only screen and (width >= 768px) and (width <= 1200px) {
+  :root {
+    --font-preset-heading-1: normal normal 700 3rem / 3.25rem "ClashDisplay-Regular", sans-serif;
+    --font-preset-heading-2: normal normal 700 2.25rem / 2.375rem "ClashDisplay-Regular", sans-serif;
+    --font-preset-heading-3: normal normal 700 1.875rem / 1.625rem "ClashDisplay-Regular", sans-serif;
+    --font-preset-heading-4: normal normal 700 1.375rem / 1.625rem "ClashDisplay-Regular", sans-serif;
+    --font-preset-heading-5: normal normal 700 1.375rem / 1.625rem "ClashDisplay-Regular", sans-serif;
+    --font-preset-heading-6: normal normal 700 1.25rem / 1.5rem "ClashDisplay-Regular", sans-serif;
+    --font-preset-heading-7: normal normal 700 1.875rem / 1.875rem "ClashDisplay-Regular", sans-serif;
+    --font-preset-heading-8: normal normal 800 2.25rem / 2.375rem "ClashDisplay-Regular", sans-serif;
+    --font-preset-heading-9: normal normal 800 1.875rem / 2.375rem "ClashDisplay-Regular", sans-serif;
+    --font-preset-heading-10: normal normal 600 1.125rem / 1.25rem "ClashDisplay-Regular", sans-serif;
+    --font-preset-heading-11: normal normal 700 1rem / 1.25rem "ClashDisplay-Regular", sans-serif;
+    --font-preset-label-1: normal normal 700 .875rem / 1.125rem "ClashDisplay-Regular", sans-serif;
+    --font-preset-label-3: normal normal 400 .875rem / 1.125rem "ClashDisplay-Regular", sans-serif;
+    --font-preset-label-4: normal normal 800 1.75rem / 1.875rem "ClashDisplay-Regular", sans-serif;
+    --font-preset-label-6: normal normal 400 1rem / 1.125rem "ClashDisplay-Regular", sans-serif;
+    --font-preset-label-7: normal normal 700 .75rem / .75rem "ClashDisplay-Regular", sans-serif;
+    --font-preset-label-8: normal normal 700 .75rem / .9375rem "ClashDisplay-Regular", sans-serif;
+    --font-preset-copy-1: normal normal 400 1rem / 1.25rem "ClashDisplay-Regular", sans-serif;
+  }
+}
+
+@media only screen and (width >= 375px) and (width <= 768px) {
+  :root {
+    --font-preset-heading-1: normal normal 700 2.625rem / 2.375rem "ClashDisplay-Regular", sans-serif;
+    --font-preset-heading-2: normal normal 700 1.875rem / 1.875rem "ClashDisplay-Regular", sans-serif;
+    --font-preset-heading-3: normal normal 700 1.75rem / 1.5rem "ClashDisplay-Regular", sans-serif;
+    --font-preset-heading-4: normal normal 700 1.125rem / 1.25rem "ClashDisplay-Regular", sans-serif;
+    --font-preset-heading-5: normal normal 700 1.25rem / 1.5rem "ClashDisplay-Regular", sans-serif;
+    --font-preset-heading-6: normal normal 700 1.125rem / 1.25rem "ClashDisplay-Regular", sans-serif;
+    --font-preset-heading-7: normal normal 700 1.375rem / 1.625rem "ClashDisplay-Regular", sans-serif;
+    --font-preset-heading-8: normal normal 800 1.75rem / 1.875rem "ClashDisplay-Regular", sans-serif;
+    --font-preset-heading-9: normal normal 800 1.125rem / 1.5rem "ClashDisplay-Regular", sans-serif;
+    --font-preset-heading-10: normal normal 400 1rem / 1.25rem "ClashDisplay-Regular", sans-serif;
+    --font-preset-heading-11: normal normal 400 .75rem / .9375rem "ClashDisplay-Regular", sans-serif;
+    --font-preset-label-1: normal normal 700 .75rem / 1.125rem "ClashDisplay-Regular", sans-serif;
+    --font-preset-label-3: normal normal 400 .75rem / 1.125rem "ClashDisplay-Regular", sans-serif;
+    --font-preset-label-4: normal normal 800 1.375rem / 1.625rem "ClashDisplay-Regular", sans-serif;
+    --font-preset-label-6: normal normal 400 .75rem / 1rem "ClashDisplay-Regular", sans-serif;
+    --font-preset-label-7: normal normal 700 .75rem / .75rem "ClashDisplay-Regular", sans-serif;
+    --font-preset-label-8: normal normal 700 .75rem / .9375rem "ClashDisplay-Regular", sans-serif;
+    --font-preset-copy-1: normal normal 400 .875rem / 1.125rem "ClashDisplay-Regular", sans-serif;
+  }
+}
+
+.container {
+  width: 100%;
+  padding-inline: var(--spacing-4);
+  padding-block: var(--spacing-3);
+}
+
+@media (width >= 768px) {
+  .container {
+    padding-inline: var(--spacing-4);
+  }
+}
+
+@media (width >= 992px) {
+  .container {
+    padding-inline: var(--spacing-5);
+  }
+}
+
+@media (width >= 1200px) {
+  .container {
+    padding-inline: var(--spacing-6);
+  }
+}
+
+@media (width >= 1440px) {
+  .container {
+    padding-inline: var(--spacing-7);
+  }
+}
+
+@media (width >= 1990px) {
+  .container {
+    max-width: 1520px;
+  }
+}
+
+@font-face {
+  font-family: ClashDisplay-Extralight;
+  src: url("/_next/static/media/ClashDisplay-Extralight.ff2b207b.woff2") format("woff2");
+  font-weight: 200;
+  font-display: swap;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: ClashDisplay-Light;
+  src: url("/_next/static/media/ClashDisplay-Light.e6f4cac0.woff2") format("woff2");
+  font-display: swap;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: ClashDisplay-Regular;
+  src: url("/_next/static/media/ClashDisplay-Regular.0f5b7284.woff2") format("woff2");
+  font-weight: 400;
+  font-display: swap;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: ClashDisplay-Medium;
+  src: url("/_next/static/media/ClashDisplay-Medium.f5e8df29.woff2") format("woff2");
+  font-weight: 500;
+  font-display: swap;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: ClashDisplay-Semibold;
+  src: url("/_next/static/media/ClashDisplay-Semibold.9d38bd3a.woff2") format("woff2");
+  font-weight: 600;
+  font-display: swap;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: ClashDisplay-Bold;
+  src: url("/_next/static/media/ClashDisplay-Bold.9bae96ce.woff2") format("woff2");
+  font-weight: 700;
+  font-display: swap;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: ClashDisplay;
+  src: url("/_next/static/media/ClashDisplay-Bold.9bae96ce.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: Pokemon-Solid;
+  src: url("/_next/static/media/Pokemon Solid.913914d2.ttf") format("truetype");
+  font-weight: 400;
+  font-display: swap;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: ClashDisplay-Variable;
+  src: url("/_next/static/media/ClashDisplay-Variable.a70461fc.woff2") format("woff2");
+  font-weight: 100 200;
+  font-display: swap;
+  font-style: normal;
+}
+
+:root {
+  --background: #242424;
+  --foreground: #fff;
+  --spacing-1: 2px;
+  --spacing-2: 4px;
+  --spacing-3: 8px;
+  --spacing-4: 16px;
+  --spacing-5: 24px;
+  --spacing-6: 32px;
+  --spacing-7: 40px;
+  --spacing-8: 64px;
+  --spacing-9: 80px;
+  --spacing-10: 92px;
+  --spacing-11: 100px;
+}
+
+html, body {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  overflow-x: hidden;
+  font-family: ClashDisplay-bold, sans-serif;
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+
+/*# sourceMappingURL=src_379c70._.css.map*/
