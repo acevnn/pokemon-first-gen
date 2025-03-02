@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import React from "react";
 import Header from "@/app/Header/Header";
 import Image from "next/image";
-import Cover from "public/assets/Images/pokemon-cover.jpg";
 import Head from "next/head";
 import { Footer } from "@/app/Footer/Footer";
 import styles from "./layout.module.scss";
@@ -52,9 +51,11 @@ export default function RootLayout({
           </svg>
         </div>
         <Image
-          src={Cover}
-          alt={"Cover image of Pokémon"}
+          src="/assets/Images/pokemon-cover.jpg"
+          alt="Cover image of Pokémon"
           className={styles["image-cover"]}
+          width={1024}
+          height={100}
           priority
         />
         <Header />

@@ -6,7 +6,6 @@ import { usePokemonList } from "@/app/PokemonList/PokemonList.hooks";
 import { Pokemon } from "@/types/pokemonTypes";
 import { fetchPokemonData } from "@/utils/pokemonData";
 import "./PokemonList.module.scss";
-import Ash from "public/assets/Images/ash-kepa4.png";
 
 const PokemonList = ({
   totalItems = 151,
@@ -63,13 +62,15 @@ const PokemonList = ({
       { threshold: 1.0 }
     );
 
-    if (sentinelRef.current) {
-      observer.observe(sentinelRef.current);
+    const currentSentinel = sentinelRef.current; // Store the current ref value
+
+    if (currentSentinel) {
+      observer.observe(currentSentinel);
     }
 
     return () => {
-      if (sentinelRef.current) {
-        observer.unobserve(sentinelRef.current);
+      if (currentSentinel) {
+        observer.unobserve(currentSentinel); // Use the stored ref value
       }
     };
   }, [loadMorePokemon, pokemon.length, totalItems, isLoading]);
@@ -88,7 +89,7 @@ const PokemonList = ({
         className={classes.PokeTrainerImg}
         width={400}
         height={400}
-        src={Ash}
+        src="/assets/Images/ash-kepa4.png"
         priority
         alt="Image of pokemon trainer Ash Ketchup"
       />
