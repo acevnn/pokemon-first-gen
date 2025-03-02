@@ -57,6 +57,7 @@ export default function RootLayout({
           width={1024}
           height={100}
           priority
+          unoptimized
         />
         <Header />
 
