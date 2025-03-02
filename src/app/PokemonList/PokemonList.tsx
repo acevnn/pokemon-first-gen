@@ -85,19 +85,20 @@ const PokemonList = ({
 
   return (
     <>
-      {/* <Image
+      <Image
         className={classes.PokeTrainerImg}
         width={400}
         height={400}
         src="/assets/Images/ash-kepa4.png"
         priority
         alt="Image of pokemon trainer Ash Ketchup"
-      /> */}
-      <img
+        unoptimized
+      />
+      {/* <img
         className={classes.PokeTrainerImg}
         src="/assets/Images/ash-kepa4.png"
         alt="Image of pokemon trainer Ash Ketchup"
-      />
+      /> */}
       <div id="pokemon-list" className={classes.pokemonListContainer}>
         <ul className={classes.PokemonListWrapper}>
           {pokemon.map((poke, index) => (
