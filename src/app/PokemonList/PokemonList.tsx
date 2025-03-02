@@ -8,31 +8,31 @@ import { fetchPokemonData } from "@/utils/pokemonData";
 import "./PokemonList.module.scss";
 
 const PokemonList = ({
-  totalItems = 151,
-  limit = 20,
+  totalItems = 0,
+  limit = 0,
+  initialPokemon = [],
 }: {
   totalItems?: number;
   limit?: number;
+  initialPokemon?: Pokemon[];
 }) => {
   const { classes } = usePokemonList();
   const [isFrontView, setIsFrontView] = useState(false);
-  const [pokemon, setPokemon] = useState<Pokemon[]>([]);
+  const [pokemon, setPokemon] = useState<Pokemon[]>(initialPokemon);
   const [isLoading, setIsLoading] = useState(false);
   const sentinelRef = useRef<HTMLDivElement | null>(null);
 
   const loadMorePokemon = useCallback(
     async (offset: number) => {
       if (pokemon.length >= totalItems) return;
+
       try {
         setIsLoading(true);
         const newPokemon = await fetchPokemonData({ offset, limit });
 
         setPokemon((prev) => {
-          const existingNames = new Set(prev.map((poke) => poke.name));
-          const filteredNewPokemon = newPokemon.filter(
-            (poke) => !existingNames.has(poke.name)
-          );
-          return [...prev, ...filteredNewPokemon];
+          const mergedPokemon = [...prev, ...newPokemon];
+          return mergedPokemon.slice(0, totalItems);
         });
       } catch (err) {
         console.error(err);
@@ -44,12 +44,6 @@ const PokemonList = ({
   );
 
   useEffect(() => {
-    if (pokemon.length === 0) {
-      loadMorePokemon(0);
-    }
-  }, [loadMorePokemon, pokemon.length]);
-
-  useEffect(() => {
     const observer = new IntersectionObserver(
       async (entries) => {
         const [entry] = entries;
@@ -57,29 +51,22 @@ const PokemonList = ({
         if (entry.isIntersecting && pokemon.length < totalItems && !isLoading) {
           const offset = pokemon.length;
           await loadMorePokemon(offset);
+
+          if (pokemon.length + limit >= totalItems) {
+            observer.disconnect();
+          }
         }
       },
       { threshold: 1.0 }
     );
 
-    const currentSentinel = sentinelRef.current; // Store the current ref value
-
-    if (currentSentinel) {
-      observer.observe(currentSentinel);
-    }
+    const currentSentinel = sentinelRef.current;
+    if (currentSentinel) observer.observe(currentSentinel);
 
     return () => {
-      if (currentSentinel) {
-        observer.unobserve(currentSentinel); // Use the stored ref value
-      }
+      if (currentSentinel) observer.unobserve(currentSentinel);
     };
-  }, [loadMorePokemon, pokemon.length, totalItems, isLoading]);
-
-  useEffect(() => {
-    return () => {
-      setPokemon([]);
-    };
-  }, []);
+  }, [loadMorePokemon, pokemon.length, totalItems, isLoading, limit]);
 
   const toggleText = `Show ${isFrontView ? "Front" : "Back"} View`;
 
