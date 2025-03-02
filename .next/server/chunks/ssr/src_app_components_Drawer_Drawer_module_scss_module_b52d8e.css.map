@@ -1,7 +1,0 @@
-{
-  "version": 3,
-  "sources": [],
-  "sections": [
-    {"offset": {"line": 1, "column": 0}, "map": {"version":3,"sources":["turbopack://[project]/src/app/components/Drawer/Drawer.module.scss.module.css"],"sourcesContent":[".drawer{display:flex;flex-direction:row;align-items:flex-start;justify-content:space-between;position:fixed;inset-block-start:0;block-size:100%;inline-size:300px;background-color:#000;box-shadow:var(--spacing-1) 0 5px rgba(0,0,0,.5);transition:transform .3s ease-in-out;inset-inline-start:0;transform:translateX(-100%);z-index:2;color:#fff;max-inline-size:100%;border-top-right-radius:var(--spacing-4);border-bottom-right-radius:var(--spacing-4);padding:var(--spacing-4)}.drawer svg{width:var(--spacing-4);height:var(--spacing-4);stroke:none;fill:#fff}.drawer__open{transform:translateX(0)}.drawer__open::before{position:absolute;background-color:rgba(0,0,0,.5);pointer-events:none;block-size:100vh;inline-size:200vw;z-index:-1;content:\"\";left:0;margin-top:-16px}.drawer__shadow{box-shadow:0 0}.drawer__header-nav{display:flex;flex-direction:column;gap:var(--spacing-4)}"],"names":[],"mappings":"AAAA;;;;;;;;;;;;;;;;;;;;;;AAAud;;;;;;;AAAiF;;;;AAAsC;;;;;;;;;;;;AAA6K;;;;AAA+B"}},
-    {"offset": {"line": 55, "column": 0}, "map": {"version":3,"sources":[],"names":[],"mappings":"A"}}]
-}

@@ -1,9 +1,5 @@
 {
-  "app": {
-    "[project]/src/app/page": [],
-    "[project]/src/app/PokemonList/page": [],
-    "[project]/src/app/_not-found/page": []
-  },
+  "app": {},
   "appUsingSizeAdjust": false,
   "pages": {},
   "pagesUsingSizeAdjust": false

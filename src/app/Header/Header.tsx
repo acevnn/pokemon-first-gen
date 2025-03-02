@@ -49,7 +49,7 @@ function Header() {
                 <Image
                   width={48}
                   height={48}
-                  src="assets/Images/poke-logo.svg"
+                  src="/assets/Images/poke-logo.svg"
                   alt="Pokéball"
                 />
                 <p className={classes.headerText}>Pokemon</p>
