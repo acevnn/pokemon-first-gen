@@ -18,7 +18,7 @@ const PokemonList = ({
 }) => {
   const { classes } = usePokemonList();
   const [isFrontView, setIsFrontView] = useState(false);
-  const [pokemon, setPokemon] = useState<Pokemon[]>(initialPokemon); // ✅ Start with `initialPokemon`
+  const [pokemon, setPokemon] = useState<Pokemon[]>(initialPokemon);
   const [isLoading, setIsLoading] = useState(false);
   const sentinelRef = useRef<HTMLDivElement | null>(null);
 
@@ -43,8 +43,6 @@ const PokemonList = ({
     [pokemon.length, totalItems, limit]
   );
 
-  // ✅ No need to fetch on mount since `initialPokemon` is already loaded
-
   useEffect(() => {
     const observer = new IntersectionObserver(
       async (entries) => {
@@ -53,6 +51,10 @@ const PokemonList = ({
         if (entry.isIntersecting && pokemon.length < totalItems && !isLoading) {
           const offset = pokemon.length;
           await loadMorePokemon(offset);
+
+          if (pokemon.length + limit >= totalItems) {
+            observer.disconnect();
+          }
 
           if (pokemon.length + limit >= totalItems) {
             observer.disconnect();
@@ -66,6 +68,7 @@ const PokemonList = ({
     if (currentSentinel) observer.observe(currentSentinel);
 
     return () => {
+      if (currentSentinel) observer.unobserve(currentSentinel);
       if (currentSentinel) observer.unobserve(currentSentinel);
     };
   }, [loadMorePokemon, pokemon.length, totalItems, isLoading, limit]);
