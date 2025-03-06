@@ -8,7 +8,7 @@ export const fetchPokemonData = async ({
   try {
     const res = await fetch(
       `https://pokeapi.co/api/v2/pokemon?offset=${offset}&limit=${limit}`,
-      { cache: "no-store" },
+      { cache: "no-store" }
     );
 
     if (!res.ok) {
@@ -34,13 +34,15 @@ export const fetchPokemonData = async ({
 
         if (!frontSprite && !backSprite) return null;
 
+        console.log(detailData);
+
         return {
           name: pokemon.name,
           frontSprite,
           backSprite,
           detailed,
         };
-      }),
+      })
     ).then((results) => results.filter(Boolean));
   } catch (error) {
     console.error(error);

@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import React, { useCallback, useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import { usePokemonList } from "@/app/PokemonList/PokemonList.hooks";
@@ -79,12 +80,11 @@ const PokemonList = ({
     <>
       <Image
         className={classes.PokeTrainerImg}
-        width={400}
-        height={400}
+        width={350}
+        height={350}
         src="/assets/Images/ash-kepa4.png"
         priority
         alt="Image of pokemon trainer Ash Ketchup"
-        unoptimized
       />
       <div id="pokemon-list" className={classes.pokemonListContainer}>
         <ul className={classes.PokemonListWrapper}>
@@ -93,16 +93,17 @@ const PokemonList = ({
               className={classes.PokemonListWrapperItem}
               key={`${poke.name}-${index}`}>
               <div className={classes.PokemonListContentWrapper}>
-                <Image
-                  loading="lazy"
-                  unoptimized
-                  src={isFrontView ? poke.backSprite : poke.frontSprite}
-                  alt={`${poke.name} ${isFrontView ? "front" : "back"} view`}
-                  width={87}
-                  height={87}
-                />
+                <Link href={`/PokemonList/details/${poke.name}`}>
+                  <Image
+                    loading="lazy"
+                    unoptimized
+                    src={isFrontView ? poke.backSprite : poke.frontSprite}
+                    alt={`${poke.name} ${isFrontView ? "front" : "back"} view`}
+                    width={87}
+                    height={87}
+                  />
+                </Link>
                 <h3 className={classes.pokemonListHeader}>{poke.name}</h3>
-                <h3>{poke.detailed}</h3>
               </div>
             </li>
           ))}
