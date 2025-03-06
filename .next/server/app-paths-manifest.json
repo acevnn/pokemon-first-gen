@@ -1,5 +1,0 @@
-{
-  "/page": "app/page.js",
-  "/PokemonList/page": "app/PokemonList/page.js",
-  "/PokemonList/details/[name]/page": "app/PokemonList/details/[name]/page.js"
-}
