@@ -6,7 +6,8 @@ export default async function showAllPokePage() {
   try {
     const totalItems = 151;
     const limit = 20;
-    const initialPokemon = await fetchPokemonData({ offset: 0, limit });
+    const offset = 0;
+    const initialPokemon = await fetchPokemonData({ offset, limit });
 
     return (
       <PokemonList
