@@ -34,8 +34,6 @@ export const fetchPokemonData = async ({
 
         if (!frontSprite && !backSprite) return null;
 
-        console.log(detailData);
-
         return {
           name: pokemon.name,
           frontSprite,

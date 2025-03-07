@@ -1,22 +1,29 @@
 import { notFound } from "next/navigation";
 import Image from "next/image";
 
+async function getPokemon(name: string) {
+  const res = await fetch(`https://pokeapi.co/api/v2/pokemon/${name}`);
+  if (!res.ok) return null;
+  return res.json();
+}
+
 interface PageProps {
-  params: { name: string };
+  params: Promise<{ name: string }>;
 }
 
 export default async function PokemonDetailPage({ params }: PageProps) {
-  const { name } = params;
+  console.log("Params received (before await):", params);
 
-  console.log("Params received:", params);
+  const resolvedParams = await params;
+  console.log("Resolved Params:", resolvedParams);
 
-  const res = await fetch(`https://pokeapi.co/api/v2/pokemon/${name}`);
-
-  if (!res.ok) {
+  if (!resolvedParams?.name || typeof resolvedParams.name !== "string") {
+    console.error("Invalid params:", resolvedParams);
     return notFound();
   }
 
-  const data = await res.json();
+  const data = await getPokemon(resolvedParams.name);
+  if (!data) return notFound();
 
   return (
     <div style={{ width: "100%", height: "300px" }}>
