@@ -2,14 +2,15 @@ import { notFound } from "next/navigation";
 import Image from "next/image";
 
 interface PageProps {
-  params: { name: unknown };
+  params: { name: string };
 }
 
 export default async function PokemonDetailPage({ params }: PageProps) {
   const { name } = params;
 
+  console.log("Params received:", params);
+
   const res = await fetch(`https://pokeapi.co/api/v2/pokemon/${name}`);
-  console.log("this are the results", res);
 
   if (!res.ok) {
     return notFound();
