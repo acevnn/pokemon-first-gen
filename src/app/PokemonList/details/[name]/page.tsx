@@ -2,7 +2,7 @@ import { notFound } from "next/navigation";
 import Image from "next/image";
 
 interface PageProps {
-  params: { name: string };
+  params: { name: unknown };
 }
 
 export default async function PokemonDetailPage({ params }: PageProps) {
