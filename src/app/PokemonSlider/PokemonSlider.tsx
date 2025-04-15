@@ -6,6 +6,7 @@ import 'swiper/css/bundle';
 import { useState } from 'react';
 import { getImageBackVariants, getImageFrontVariants } from '@/utils/constants';
 import { PokemonSprites } from '@/types/pokemonTypes';
+import Image from 'next/image';
 
 interface Props {
   sprites: PokemonSprites;
@@ -41,8 +42,8 @@ export default function PokemonSlider({ sprites }: Props) {
             <SwiperSlide key={idx}>
               <div style={{ textAlign: 'center' }}>
                 <p style={{ fontWeight: 'bold', marginBottom: '8px' }}>{img.label}</p>
-                <img
-                  src={img.src ?? undefined}
+                <Image
+                  src={img.src ?? ''}
                   alt={img.label}
                   width={150}
                   height={150}
@@ -72,8 +73,8 @@ export default function PokemonSlider({ sprites }: Props) {
             <SwiperSlide key={idx}>
               <div style={{ textAlign: 'center' }}>
                 <p style={{ fontWeight: 'bold', marginBottom: '8px' }}>{img.label}</p>
-                <img
-                  src={img.src ?? undefined}
+                <Image
+                  src={img.src ?? ''}
                   alt={img.label}
                   width={150}
                   height={150}

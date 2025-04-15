@@ -3,7 +3,6 @@
 import React, { useCallback, useEffect, useRef, useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import PokeTrainer from '@/Images/ash-kepa4.jpg';
 import { usePokemonList } from '@/app/PokemonList/PokemonList.hooks';
 import { fetchPokemonData } from '@/utils/pokemonData';
 import { Pokemon } from '@/types/pokemonTypes';
@@ -83,7 +82,7 @@ const PokemonList = ({
         className={classes.PokeTrainerImg}
         width={350}
         height={350}
-        src={PokeTrainer}
+        src="/ash-kepa4.jpg"
         priority
         alt="Image of pokemon trainer Ash Ketchup"
       />
