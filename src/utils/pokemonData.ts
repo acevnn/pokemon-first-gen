@@ -8,7 +8,7 @@ export const fetchPokemonData = async ({
   try {
     const res = await fetch(
       `https://pokeapi.co/api/v2/pokemon?offset=${offset}&limit=${limit}`,
-      { cache: "no-store" }
+      { cache: "no-store" },
     );
 
     if (!res.ok) {
@@ -40,10 +40,46 @@ export const fetchPokemonData = async ({
           backSprite,
           detailed,
         };
-      })
+      }),
     ).then((results) => results.filter(Boolean));
   } catch (error) {
     console.error(error);
     throw error;
   }
+};
+
+interface Ability {
+  ability: {
+    name: string;
+  };
+}
+
+interface Sprites {
+  other: {
+    showdown: {
+      front_default: string;
+    };
+  };
+}
+
+interface PokemonDataDetails {
+  name: string;
+  sprites: Sprites;
+  abilities: Ability[];
+}
+
+export const getPokemon = async (
+  name: string,
+): Promise<PokemonDataDetails | null> => {
+  const res = await fetch(`https://pokeapi.co/api/v2/pokemon/${name}`);
+
+  if (!res.ok) {
+    console.error(`Failed to fetch pokemon: ${res.statusText}`);
+  }
+  const data = await res.json();
+  return {
+    name: data.name,
+    sprites: data.sprites,
+    abilities: data.abilities,
+  };
 };

@@ -1,11 +1,12 @@
 "use client";
 
-import Link from "next/link";
 import React, { useCallback, useEffect, useRef, useState } from "react";
+import Link from "next/link";
 import Image from "next/image";
+import PokeTrainer from '@/Images/ash-kepa4.png'
 import { usePokemonList } from "@/app/PokemonList/PokemonList.hooks";
-import { Pokemon } from "@/types/pokemonTypes";
 import { fetchPokemonData } from "@/utils/pokemonData";
+import { Pokemon } from "@/types/pokemonTypes";
 import "./PokemonList.module.scss";
 
 const PokemonList = ({
@@ -82,7 +83,7 @@ const PokemonList = ({
         className={classes.PokeTrainerImg}
         width={350}
         height={350}
-        src="/assets/Images/ash-kepa4.png"
+        src={PokeTrainer}
         priority
         alt="Image of pokemon trainer Ash Ketchup"
       />

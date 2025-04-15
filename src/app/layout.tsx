@@ -6,6 +6,7 @@ import Head from "next/head";
 import { Footer } from "@/app/Footer/Footer";
 import styles from "./layout.module.scss";
 import "@/styles/globals.scss/";
+import PokeCover from '@/Images/pokemon-cover.jpg';
 
 export const metadata: Metadata = {
   title: "Pokemon's",
@@ -51,7 +52,7 @@ export default function RootLayout({
           </svg>
         </div>
         <Image
-          src="/assets/Images/pokemon-cover.jpg"
+          src={PokeCover}
           alt="Cover image of Pokémon"
           className={styles["image-cover"]}
           width={1024}
