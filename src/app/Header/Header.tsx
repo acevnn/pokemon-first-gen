@@ -5,6 +5,7 @@ import Link from "next/link";
 import "./Header.module.scss";
 import { useHeader } from "@/app/Header/Header.hooks";
 import Image from "next/image";
+import PokeLogo from '@/Images/poke-logo.svg';
 import { HeaderNavigationMobile } from "@/app/components/HeaderNavigationMobile/HeaderNavigationMobile";
 import { HeaderNav } from "@/app/components/HeaderNav/HeaderNav";
 import useBreakpoints from "@/utils/grid";
@@ -32,7 +33,7 @@ function Header() {
                 <Image
                   width={48}
                   height={48}
-                  src="assets/Images/poke-logo.svg"
+                  src={PokeLogo}
                   alt="Pokéball"
                   priority
                 />
@@ -49,7 +50,7 @@ function Header() {
                 <Image
                   width={48}
                   height={48}
-                  src="/assets/Images/poke-logo.svg"
+                  src={PokeLogo}
                   alt="Pokéball"
                 />
                 <p className={classes.headerText}>Pokemon</p>
