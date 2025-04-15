@@ -1,15 +1,6 @@
-export const fetchPokemonData = async ({
-  offset,
-  limit,
-}: {
-  offset: number;
-  limit: number;
-}) => {
+export const fetchPokemonData = async ({ offset, limit }: { offset: number; limit: number }) => {
   try {
-    const res = await fetch(
-      `https://pokeapi.co/api/v2/pokemon?offset=${offset}&limit=${limit}`,
-      { cache: "no-store" },
-    );
+    const res = await fetch(`https://pokeapi.co/api/v2/pokemon?offset=${offset}&limit=${limit}`);
 
     if (!res.ok) {
       throw new Error(`Failed to fetch Pokémon data: ${res.statusText}`);
@@ -26,10 +17,8 @@ export const fetchPokemonData = async ({
 
         const detailData = await detailRes.json();
 
-        const frontSprite =
-          detailData.sprites.other.showdown?.front_default || null;
-        const backSprite =
-          detailData.sprites.other.showdown?.back_default || null;
+        const frontSprite = detailData.sprites.other.showdown?.front_default || null;
+        const backSprite = detailData.sprites.other.showdown?.back_default || null;
         const detailed = detailData.abilities[0].ability.name || null;
 
         if (!frontSprite && !backSprite) return null;
@@ -40,7 +29,7 @@ export const fetchPokemonData = async ({
           backSprite,
           detailed,
         };
-      }),
+      })
     ).then((results) => results.filter(Boolean));
   } catch (error) {
     console.error(error);
@@ -68,9 +57,7 @@ interface PokemonDataDetails {
   abilities: Ability[];
 }
 
-export const getPokemon = async (
-  name: string,
-): Promise<PokemonDataDetails | null> => {
+export const getPokemon = async (name: string): Promise<PokemonDataDetails | null> => {
   const res = await fetch(`https://pokeapi.co/api/v2/pokemon/${name}`);
 
   if (!res.ok) {

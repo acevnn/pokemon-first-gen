@@ -1,13 +1,13 @@
-"use client";
+'use client';
 
-import React, { useCallback, useEffect, useRef, useState } from "react";
-import Link from "next/link";
-import Image from "next/image";
-import PokeTrainer from '@/Images/ash-kepa4.png'
-import { usePokemonList } from "@/app/PokemonList/PokemonList.hooks";
-import { fetchPokemonData } from "@/utils/pokemonData";
-import { Pokemon } from "@/types/pokemonTypes";
-import "./PokemonList.module.scss";
+import React, { useCallback, useEffect, useRef, useState } from 'react';
+import Link from 'next/link';
+import Image from 'next/image';
+import PokeTrainer from '@/Images/ash-kepa4.jpg';
+import { usePokemonList } from '@/app/PokemonList/PokemonList.hooks';
+import { fetchPokemonData } from '@/utils/pokemonData';
+import { Pokemon } from '@/types/pokemonTypes';
+import './PokemonList.module.scss';
 
 const PokemonList = ({
   totalItems = 0,
@@ -75,7 +75,7 @@ const PokemonList = ({
     };
   }, [loadMorePokemon, pokemon.length, totalItems, isLoading, limit]);
 
-  const toggleText = `Show ${isFrontView ? "Front" : "Back"} View`;
+  const toggleText = `Show ${isFrontView ? 'Front' : 'Back'} View`;
 
   return (
     <>
@@ -90,16 +90,14 @@ const PokemonList = ({
       <div id="pokemon-list" className={classes.pokemonListContainer}>
         <ul className={classes.PokemonListWrapper}>
           {pokemon.map((poke, index) => (
-            <li
-              className={classes.PokemonListWrapperItem}
-              key={`${poke.name}-${index}`}>
+            <li className={classes.PokemonListWrapperItem} key={`${poke.name}-${index}`}>
               <div className={classes.PokemonListContentWrapper}>
                 <Link href={`/PokemonList/details/${poke.name}`}>
                   <Image
                     loading="lazy"
                     unoptimized
                     src={isFrontView ? poke.backSprite : poke.frontSprite}
-                    alt={`${poke.name} ${isFrontView ? "front" : "back"} view`}
+                    alt={`${poke.name} ${isFrontView ? 'front' : 'back'} view`}
                     width={87}
                     height={87}
                   />
@@ -109,15 +107,10 @@ const PokemonList = ({
             </li>
           ))}
         </ul>
-        <div ref={sentinelRef}>
-          {isLoading && <p>Loading more Pokémon...</p>}
-        </div>
+        <div ref={sentinelRef}>{isLoading && <p>Loading more Pokémon...</p>}</div>
       </div>
       <div className={classes.toggleViewWrapper}>
-        <button
-          aria-label={toggleText}
-          className={classes.PokemonListToggleView}
-          onClick={() => setIsFrontView((prev) => !prev)}>
+        <button aria-label={toggleText} className={classes.PokemonListToggleView} onClick={() => setIsFrontView((prev) => !prev)}>
           {toggleText}
         </button>
       </div>
