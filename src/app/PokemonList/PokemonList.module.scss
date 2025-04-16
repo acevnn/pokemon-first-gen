@@ -25,6 +25,8 @@
 
   &__container {
     padding: 24px;
+    position: relative;
+    z-index: 1;
   }
 
   &__header {

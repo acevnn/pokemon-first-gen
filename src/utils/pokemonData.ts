@@ -1,3 +1,5 @@
+import { PokemonDataDetails } from '@/types/pokemonTypes';
+
 export const fetchPokemonData = async ({ offset, limit }: { offset: number; limit: number }) => {
   try {
     const res = await fetch(`https://pokeapi.co/api/v2/pokemon?offset=${offset}&limit=${limit}`);
@@ -37,36 +39,24 @@ export const fetchPokemonData = async ({ offset, limit }: { offset: number; limi
   }
 };
 
-interface Ability {
-  ability: {
-    name: string;
-  };
-}
-
-interface Sprites {
-  other: {
-    showdown: {
-      front_default: string;
-    };
-  };
-}
-
-interface PokemonDataDetails {
-  name: string;
-  sprites: Sprites;
-  abilities: Ability[];
-}
-
 export const getPokemon = async (name: string): Promise<PokemonDataDetails | null> => {
-  const res = await fetch(`https://pokeapi.co/api/v2/pokemon/${name}`);
+  try {
+    const res = await fetch(`https://pokeapi.co/api/v2/pokemon/${name}`);
 
-  if (!res.ok) {
-    console.error(`Failed to fetch pokemon: ${res.statusText}`);
+    if (!res.ok) {
+      console.error(`Failed to fetch pokemon: ${res.statusText}`);
+      return null;
+    }
+
+    const data = await res.json();
+
+    return {
+      name: data.name,
+      sprites: data.sprites,
+      abilities: data.abilities,
+    };
+  } catch (err) {
+    console.error('Error fetching Pokémon:', err);
+    return null;
   }
-  const data = await res.json();
-  return {
-    name: data.name,
-    sprites: data.sprites,
-    abilities: data.abilities,
-  };
 };

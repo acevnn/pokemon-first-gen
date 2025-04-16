@@ -1,27 +1,19 @@
-"use client";
+'use client';
 
-import React, { useState } from "react";
-import Link from "next/link";
-import "./Header.module.scss";
-import { useHeader } from "@/app/Header/Header.hooks";
-import Image from "next/image";
+import React from 'react';
+import Link from 'next/link';
+import './Header.module.scss';
+import { useHeader } from '@/app/Header/Header.hooks';
+import Image from 'next/image';
 import PokeLogo from '@/Images/poke-logo.svg';
-import { HeaderNavigationMobile } from "@/app/components/HeaderNavigationMobile/HeaderNavigationMobile";
-import { HeaderNav } from "@/app/components/HeaderNav/HeaderNav";
-import useBreakpoints from "@/utils/grid";
-import { IconSearch } from "public/assets/Icons/Search/Search";
+import { HeaderNavigationMobile } from '@/app/components/HeaderNavigationMobile/HeaderNavigationMobile';
+import { HeaderNav } from '@/app/components/HeaderNav/HeaderNav';
+import useBreakpoints from '@/utils/grid';
+import SearchPokemon from '@/app/SearchPokemon/SearchPokemon';
 
 function Header() {
   const { classes } = useHeader();
   const { isMobile } = useBreakpoints();
-  const [toggle, setToggle] = useState(false);
-
-  function handleToggleInput() {
-    setToggle((prev) => !prev);
-    if (toggle) {
-      return true;
-    }
-  }
 
   return (
     <>
@@ -30,13 +22,7 @@ function Header() {
           <div className={classes.headerMobile}>
             <div className={classes.headerLogoWrapper}>
               <Link href="/">
-                <Image
-                  width={48}
-                  height={48}
-                  src={PokeLogo}
-                  alt="Pokéball"
-                  priority
-                />
+                <Image width={48} height={48} src={PokeLogo} alt="Pokéball" priority />
               </Link>
             </div>
             <HeaderNavigationMobile />
@@ -47,12 +33,7 @@ function Header() {
           <>
             <div className={classes.headerLogoWrapper}>
               <Link href="/">
-                <Image
-                  width={48}
-                  height={48}
-                  src={PokeLogo}
-                  alt="Pokéball"
-                />
+                <Image width={48} height={48} src={PokeLogo} alt="Pokéball" />
                 <p className={classes.headerText}>Pokemon</p>
               </Link>
             </div>
@@ -60,17 +41,8 @@ function Header() {
         )}
 
         <div className={classes.headerSearch}>
-          <IconSearch
-            className={`${classes.headerSearchIcon} ${toggle ? `${classes.headerSearchToggle}` : ""}`}
-          />
-          <input
-            className={`${classes.headerSearchInput} ${toggle ? `${classes.headerInputToggle}` : ""}`}
-            onClick={handleToggleInput}
-            onBlur={() => setToggle(false)}
-            type="text"
-            placeholder="Search Pokémon..."
-            aria-label="Search Pokémon"
-          />
+          {/*<IconSearch className={`${classes.headerSearchIcon} ${toggle ? `${classes.headerSearchToggle}` : ''}`} />*/}
+          <SearchPokemon />
         </div>
       </header>
       {!isMobile && <HeaderNav />}
