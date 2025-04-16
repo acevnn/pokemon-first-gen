@@ -82,9 +82,9 @@ const PokemonList = ({
         className={classes.PokeTrainerImg}
         width={350}
         height={350}
-        src="/ash-kepa4.jpg"
-        priority
+        src="/ash-trainer.png"
         alt="Image of pokemon trainer Ash Ketchup"
+        unoptimized={true}
       />
       <div id="pokemon-list" className={classes.pokemonListContainer}>
         <ul className={classes.PokemonListWrapper}>
