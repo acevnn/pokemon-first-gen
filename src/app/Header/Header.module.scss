@@ -43,23 +43,6 @@
     padding-bottom: 10px;
   }
 
-  &__search {
-    background: #fff;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 8px;
-
-    border: 1px solid #dedede;
-    border-radius: 6px;
-    padding: 4px 12px;
-
-    @include mixins.media-query('xs') {
-      padding: 4px 12px;
-    }
-  }
-
   &__search-icon {
     width: 12px;
     height: 12px;

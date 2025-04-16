@@ -1,5 +1,3 @@
-// src/types/pokemonTypes.ts
-
 export interface SpriteImageVariants {
   front_default?: string | null;
   front_female?: string | null;
@@ -39,3 +37,15 @@ export type Pokemon = {
   backSprite: string;
   detailed?: string;
 };
+
+export interface Ability {
+  ability: {
+    name: string;
+  };
+}
+
+export interface PokemonDataDetails {
+  name: string;
+  sprites: PokemonSprites;
+  abilities: Ability[];
+}

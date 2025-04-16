@@ -80,8 +80,8 @@ const PokemonList = ({
     <>
       <Image
         className={classes.PokeTrainerImg}
-        width={350}
-        height={350}
+        width={450}
+        height={550}
         src="/ash-trainer.png"
         alt="Image of pokemon trainer Ash Ketchup"
         unoptimized={true}
