@@ -16,7 +16,6 @@ export default function SearchPokemon() {
   const [loading, setLoading] = useState(false);
   const [showOptions, setShowOptions] = useState(false);
   const [toggleSearch, setToggleSearch] = useState(false);
-  const [isFocused, setIsFocused] = useState(false);
 
   const router = useRouter();
 
