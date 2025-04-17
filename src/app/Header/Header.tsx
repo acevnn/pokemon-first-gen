@@ -13,11 +13,12 @@ import SearchPokemon from '@/app/SearchPokemon/SearchPokemon';
 
 function Header() {
   const { classes } = useHeader();
-  const { isMobile } = useBreakpoints();
+  const { isMobile, isDesktop } = useBreakpoints();
+  // console.log('isMobile: ', isMobile, 'isTablet :', isTablet, 'isDesktop :', isDesktop);
 
   return (
     <>
-      <header className={`${classes.header} container`}>
+      <header className={classes.header}>
         {isMobile && (
           <div className={classes.headerMobile}>
             <div className={classes.headerLogoWrapper}>
@@ -29,7 +30,7 @@ function Header() {
           </div>
         )}
 
-        {!isMobile && (
+        {isDesktop && (
           <>
             <div className={classes.headerLogoWrapper}>
               <Link href="/">
@@ -37,15 +38,11 @@ function Header() {
                 <p className={classes.headerText}>Pokemon</p>
               </Link>
             </div>
+            <HeaderNav />
           </>
         )}
-
-        <div className={classes.headerSearch}>
-          {/*<IconSearch className={`${classes.headerSearchIcon} ${toggle ? `${classes.headerSearchToggle}` : ''}`} />*/}
-          <SearchPokemon />
-        </div>
+        <SearchPokemon />
       </header>
-      {!isMobile && <HeaderNav />}
     </>
   );
 }

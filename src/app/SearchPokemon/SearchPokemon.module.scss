@@ -1,26 +1,57 @@
+@use '@/styles/mixins';
+
 .search {
   position: relative;
 
+  //&__input {
+  //  padding: 8px 12px;
+  //  font-size: 16px;
+  //  border-radius: 4px;
+  //  background: transparent;
+  //  color: white;
+  //  border: 1px solid #ccc;
+  //}
+
   &__input {
-    padding: 8px 12px;
-    font-size: 16px;
-    border-radius: 4px;
-    background: transparent;
-    color: white;
-    border: 1px solid #ccc;
+    width: 75px;
+    border: none;
+    outline: none;
+    flex: 1;
+    color: #E54222;
+    transition: width 0.3s ease;
+    padding: 8px;
+
+    &--active {
+      width: 150px;
+    }
+
+    &::placeholder {
+      color: #CBCBCB;
+      font: var(--font-preset-label-3);
+    }
   }
 
   &__result-list {
     position: absolute;
     top: 100%;
     width: 100%;
-    background: transparent;
+    background: rgba(0, 0, 0, 0.6);
     backdrop-filter: blur(10px);
     border: 1px solid #555;
     z-index: 10;
     list-style: none;
-    margin: 1px 0 0 0;
+    margin: 4px 0 0 0;
     padding: 8px;
+    opacity: 0;
+    transform: translateY(-5px);
+    transition: opacity 0.5s ease, transform 1s ease;
+    pointer-events: none;
+
+    &--visible {
+      opacity: 1;
+      transform: translateY(0);
+      pointer-events: all;
+    }
   }
 
   &__result-item {

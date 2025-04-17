@@ -1,15 +1,17 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState } from 'react';
 
 export type Breakpoints = {
   isMobile: boolean;
+  // isTablet: boolean;
   isDesktop: boolean;
   isInitialized: boolean;
 };
 
 const useBreakpoints = (): Breakpoints => {
   const [breakpoint, setBreakpoint] = useState<Breakpoints>({
-    isMobile: false,
-    isDesktop: true,
+    isMobile: true,
+    // isTablet: false,
+    isDesktop: false,
     isInitialized: false,
   });
 
@@ -17,16 +19,17 @@ const useBreakpoints = (): Breakpoints => {
     const getBreakpoints = (): Breakpoints => {
       const width = window.innerWidth;
       return {
-        isMobile: width < 1024,
-        isDesktop: width >= 1024,
+        isMobile: width <= 992,
+        // isTablet: width < 993,
+        isDesktop: width > 993,
         isInitialized: true,
       };
     };
 
     const updateBreakpoints = () => setBreakpoint(getBreakpoints());
     updateBreakpoints();
-    window.addEventListener("resize", updateBreakpoints);
-    return () => window.removeEventListener("resize", updateBreakpoints);
+    window.addEventListener('resize', updateBreakpoints);
+    return () => window.removeEventListener('resize', updateBreakpoints);
   }, []);
 
   return breakpoint;

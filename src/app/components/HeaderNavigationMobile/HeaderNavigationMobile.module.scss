@@ -3,15 +3,14 @@
 .header-navigation {
   &__toggle {
     background: transparent;
-    outline: none;
     border: none;
     color: inherit;
-    width: var(--spacing-5);
-    height: var(--spacing-5);
+    width: var(--spacing-6);
+    height: var(--spacing-6);
 
-    @include mixins.media-query('xs') {
-      width: var(--spacing-6);
-      height: var(--spacing-6);
+    @include mixins.media-query('sm') {
+      width: var(--spacing-7);
+      height: var(--spacing-7);
     }
   }
 }
