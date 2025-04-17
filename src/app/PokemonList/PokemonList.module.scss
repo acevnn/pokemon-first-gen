@@ -86,12 +86,12 @@
       transition: transform 0.3s ease-out;
       background: #fff;
       border-radius: 50%;
-      padding: 12px;
+      padding: var(--spacing-4);
       object-fit: scale-down;
 
-      height: 96px;
-      width: 96px;
-      box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.39) inset;
+      height: 112px;
+      width: 112px;
+      box-shadow: 0 var(--spacing-2) var(--spacing-2) 0 rgba(0, 0, 0, 0.39) inset;
 
       &:hover {
         transform: scale(1.15);
@@ -119,14 +119,16 @@
   &__toggle-wrapper {
     width: 100%;
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-end;
     position: fixed;
     bottom: 0;
     left: 0;
-    background: #000;
-    z-index: 10;
-    opacity: 0.9;
-    padding: 24px;
+    background: transparent;
+    opacity: 1;
+    backdrop-filter: blur(0.6rem);
+    z-index: 9;
+    padding: var(--spacing-6);
+    border: 1px solid #d3d3d3;
   }
 
   &__toggle {

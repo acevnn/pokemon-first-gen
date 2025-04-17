@@ -1,29 +1,27 @@
 @use "@/styles/mixins";
 
 .drawer {
-  display: flex;
-  flex-direction: row;
-  align-items: flex-start;
-  justify-content: space-between;
+  height: 100%;
+  width: 300px;
   position: fixed;
-  inset-block-start: 0;
-  block-size: 100%;
-  inline-size: 300px;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: space-between;
   background-color: #000;
+  //backdrop-filter: blur(50px);
   box-shadow: var(--spacing-1) 0 5px rgb(0 0 0 / 50%);
   transition: transform 0.3s ease-in-out;
-  inset-inline-start: 0;
   transform: translateX(-100%);
-  z-index: 2;
+  z-index: 10;
   color: #fff;
-  max-inline-size: 100%;
   border-top-right-radius: var(--spacing-4);
   border-bottom-right-radius: var(--spacing-4);
   padding: var(--spacing-4);
 
   svg {
-    width: var(--spacing-4);
-    height: var(--spacing-4);
+    width: var(--spacing-5);
+    height: var(--spacing-5);
     stroke: none;
     fill: #fff;
   }
@@ -53,13 +51,4 @@
     flex-direction: column;
     gap: var(--spacing-4);
   }
-
-  //button {
-  //  display: flex;
-  //  justify-content: flex-end;
-  //  width: 100%;
-  //  box-sizing: border-box;
-  //  padding: 50px;
-  //  border: none;
-  //}
 }

@@ -15,6 +15,8 @@ export default function SearchPokemon() {
   const [filtered, setFiltered] = useState<PokemonResult[]>([]);
   const [loading, setLoading] = useState(false);
   const [showOptions, setShowOptions] = useState(false);
+  const [toggleSearch, setToggleSearch] = useState(false);
+  const [isFocused, setIsFocused] = useState(false);
 
   const router = useRouter();
 
@@ -25,6 +27,7 @@ export default function SearchPokemon() {
         const res = await fetch('https://pokeapi.co/api/v2/pokemon?limit=151');
         const data = await res.json();
         setAllPokemon(data.results);
+        console.log(allPokemon);
       } catch (error) {
         console.error('Failed to fetch Pokémon list:', error);
       } finally {
@@ -54,6 +57,12 @@ export default function SearchPokemon() {
       setQuery('');
       setShowOptions(false);
     }
+
+    if (e.key === 'Escape') {
+      setQuery('');
+      setToggleSearch(false);
+      setShowOptions(false);
+    }
   }
 
   function handleSelect(name: string) {
@@ -62,30 +71,47 @@ export default function SearchPokemon() {
     router.push(`/PokemonList/details/${name}`);
   }
 
+  function handleClickSearch() {
+    setToggleSearch(true);
+  }
+
+  function handleBlurSearch() {
+    setToggleSearch(false);
+    setShowOptions(false);
+    setQuery('');
+  }
+
   return (
     <div className={styles.search}>
       <input
         type="text"
         placeholder="Search Pokémon..."
         value={query}
+        onClick={handleClickSearch}
+        onBlur={handleBlurSearch}
         onChange={(e) => setQuery(e.target.value)}
         onKeyDown={handleKeyDown}
-        className={styles['search__input']}
+        className={`${styles['search__input']} ${toggleSearch ? styles['search__input--active'] : ''}`}
       />
 
       {loading && <p>Loading all Pokémon...</p>}
 
-      {showOptions && filtered.length > 0 && (
-        <ul className={styles['search__result-list']}>
-          {filtered.map((poke) => (
-            <li key={poke.name}>
-              <button type="button" className={styles['search__result-item']} onClick={() => handleSelect(poke.name)}>
-                {poke.name}
-              </button>
-            </li>
-          ))}
-        </ul>
-      )}
+      <ul
+        className={`${styles['search__result-list']} ${showOptions && filtered.length > 0 ? styles['search__result-list--visible'] : ''}`}
+      >
+        {filtered.map((poke) => (
+          <li key={poke.name}>
+            <button
+              style={{ textTransform: 'capitalize' }}
+              type="button"
+              className={styles['search__result-item']}
+              onClick={() => handleSelect(poke.name)}
+            >
+              {poke.name}
+            </button>
+          </li>
+        ))}
+      </ul>
 
       {!loading && query && filtered.length === 0 && <p className={styles['search__no-match']}>No Pokémon found</p>}
     </div>

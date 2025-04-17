@@ -1,11 +1,11 @@
-import type { Metadata } from "next";
-import React from "react";
-import Header from "@/app/Header/Header";
-import Image from "next/image";
-import Head from "next/head";
-import { Footer } from "@/app/Footer/Footer";
-import styles from "./layout.module.scss";
-import "@/styles/globals.scss/";
+import type { Metadata } from 'next';
+import React from 'react';
+import Header from '@/app/Header/Header';
+import Image from 'next/image';
+import Head from 'next/head';
+import { Footer } from '@/app/Footer/Footer';
+import styles from './layout.module.scss';
+import '@/styles/globals.scss/';
 import PokeCover from '@/Images/pokemon-cover.jpg';
 
 export const metadata: Metadata = {
@@ -21,19 +21,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <Head>
-        <link
-          href="https://fonts.cdnfonts.com/css/pokemon-solid"
-          rel="stylesheet"
-        />
+        <link href="https://fonts.cdnfonts.com/css/pokemon-solid" rel="stylesheet" />
       </Head>
       <body>
-        <div className={styles["background-wrapper"]}>
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="1066"
-            height="799"
-            viewBox="0 0 1066 799"
-            fill="none">
+        <div className={styles['background-wrapper']}>
+          <svg xmlns="http://www.w3.org/2000/svg" width="1066" height="799" viewBox="0 0 1066 799" fill="none">
             <path
               d="M676.505 266.333C676.505 413.425 525.064 532.666 338.252 532.666C151.441 532.666 0 413.425 0 266.333C0 119.241 151.441 0 338.252 0C525.064 0 676.505 119.241 676.505 266.333Z"
               fill="#00FF9F"
@@ -54,7 +46,7 @@ export default function RootLayout({
         <Image
           src={PokeCover}
           alt="Cover image of Pokémon"
-          className={styles["image-cover"]}
+          className={styles['image-cover']}
           width={1024}
           height={100}
           priority
@@ -62,9 +54,7 @@ export default function RootLayout({
         />
         <Header />
 
-        <main className={`${styles["layout-wrapper"]} container`}>
-          {children}
-        </main>
+        <main className={`${styles['layout-wrapper']}`}>{children}</main>
         <Footer />
       </body>
     </html>
