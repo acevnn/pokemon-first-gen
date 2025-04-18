@@ -84,7 +84,6 @@ const PokemonList = ({
         height={550}
         src="/ash-trainer.png"
         alt="Image of pokemon trainer Ash Ketchup"
-        unoptimized={true}
       />
       <div id="pokemon-list" className={classes.pokemonListContainer}>
         <ul className={classes.PokemonListWrapper}>
@@ -94,7 +93,7 @@ const PokemonList = ({
                 <Link href={`/PokemonList/details/${poke.name}`}>
                   <Image
                     loading="lazy"
-                    unoptimized
+                    unoptimized={true}
                     src={isFrontView ? poke.backSprite : poke.frontSprite}
                     alt={`${poke.name} ${isFrontView ? 'front' : 'back'} view`}
                     width={87}

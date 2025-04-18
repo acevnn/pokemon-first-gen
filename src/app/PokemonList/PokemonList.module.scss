@@ -21,10 +21,7 @@
 }
 
 .pokemon-wrapper {
-  padding: 2.5rem 1.5rem;
-
   &__container {
-    padding: 24px;
     position: relative;
     z-index: 1;
   }
@@ -37,18 +34,21 @@
   &__list {
     position: relative;
     display: grid;
+    justify-content: center;
     grid-template-columns: repeat(1, 1fr);
     gap: 2rem 1rem;
     grid-auto-rows: minmax(250px, auto);
     flex-wrap: wrap;
     padding: 0;
-    margin: 0;
+    margin: 0 auto;
     list-style: none;
     width: 100%;
-    min-width: 250px;
+    //min-width: 100px;
+    max-width: 1024px;
+    min-width: 150px;
     z-index: 10;
 
-    @include mixins.media-query(xs) {
+    @include mixins.media-query(sm) {
       grid-template-columns: repeat(2, 1fr);
     }
 
@@ -127,8 +127,12 @@
     opacity: 1;
     backdrop-filter: blur(0.6rem);
     z-index: 9;
-    padding: var(--spacing-6);
+    padding: var(--spacing-4);
     border: 1px solid #d3d3d3;
+
+    @include mixins.media-query(xs) {
+
+    }
   }
 
   &__toggle {
