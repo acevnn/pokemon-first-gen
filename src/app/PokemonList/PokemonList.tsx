@@ -84,6 +84,7 @@ const PokemonList = ({
         height={550}
         src="/ash-trainer.png"
         alt="Image of pokemon trainer Ash Ketchup"
+        unoptimized={true}
       />
       <div id="pokemon-list" className={classes.pokemonListContainer}>
         <ul className={classes.PokemonListWrapper}>
