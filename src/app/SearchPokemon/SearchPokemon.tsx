@@ -44,7 +44,10 @@ export default function SearchPokemon() {
       return;
     }
 
+    console.log(query);
+
     const matches = allPokemon.filter((poke) => poke.name.toLowerCase().startsWith(query.toLowerCase()));
+    console.log('this are the matches', matches);
 
     setFiltered(matches.slice(0, 10));
     setShowOptions(true);
@@ -92,8 +95,6 @@ export default function SearchPokemon() {
         onKeyDown={handleKeyDown}
         className={`${styles['search__input']} ${toggleSearch ? styles['search__input--active'] : ''}`}
       />
-
-      {loading && <p>Loading all Pokémon...</p>}
 
       <ul
         className={`${styles['search__result-list']} ${showOptions && filtered.length > 0 ? styles['search__result-list--visible'] : ''}`}
