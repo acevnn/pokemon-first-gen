@@ -1,7 +1,7 @@
 @use "mixins";
 @use "base";
 @use "variables";
-@use "@/../public/css/clash-display";
+@use "./clash-display";
 
 :root {
   --background: #242424;
@@ -25,7 +25,6 @@ body {
   background: var(--background);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  font-family: 'ClashDisplay-bold', sans-serif;
 }
 
 * {

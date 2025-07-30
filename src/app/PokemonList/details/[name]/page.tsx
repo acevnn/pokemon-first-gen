@@ -11,6 +11,8 @@ export default async function PokemonDetailPage({ params }: PageProps) {
   const data = await getPokemon(paramsResolved.name);
   if (!data) return notFound();
 
+  // console.log(params);
+  // console.log(paramsResolved);
   return (
     <>
       {' '}

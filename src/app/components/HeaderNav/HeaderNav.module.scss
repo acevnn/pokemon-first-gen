@@ -1,12 +1,12 @@
 .header-nav {
   display: flex;
   justify-content: center;
+  margin-left: var(--spacing-7);
 
   &__list {
     display: flex;
     gap: var(--spacing-4);
     position: relative;
-    //z-index: 23;
     color: #ffdfdf;
 
     a {

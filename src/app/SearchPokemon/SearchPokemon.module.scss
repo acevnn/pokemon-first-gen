@@ -2,6 +2,9 @@
 
 .search {
   position: relative;
+  min-width: 150px;
+  display: flex;
+  justify-content: flex-end;
 
   //&__input {
   //  padding: 8px 12px;
@@ -16,7 +19,6 @@
     width: 75px;
     border: none;
     outline: none;
-    flex: 1;
     color: #E54222;
     transition: width 0.3s ease;
     padding: 8px;
