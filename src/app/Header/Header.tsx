@@ -14,7 +14,6 @@ import SearchPokemon from '@/app/SearchPokemon/SearchPokemon';
 function Header() {
   const { classes } = useHeader();
   const { isMobile, isDesktop } = useBreakpoints();
-  // console.log('isMobile: ', isMobile, 'isTablet :', isTablet, 'isDesktop :', isDesktop);
 
   return (
     <>

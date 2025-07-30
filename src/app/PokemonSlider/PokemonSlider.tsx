@@ -30,7 +30,6 @@ export default function PokemonSlider({ sprites }: Props) {
         scrollbar={{ draggable: true }}
       >
         {filteredImages.map((img, idx) => {
-          console.log('items loaded', img);
           return (
             <SwiperSlide key={idx}>
               <div style={{ textAlign: 'center' }}>
