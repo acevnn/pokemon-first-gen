@@ -13,3 +13,8 @@ export const getImageBackVariants = (sprites: PokemonSprites): ImageVariant[] =>
   { label: 'Showdown Back', src: sprites.other?.showdown?.back_default },
   { label: 'Back Shiny', src: sprites.back_shiny },
 ];
+
+export const getFrontAndBackVariants = (sprites: PokemonSprites): ImageVariant[] => [
+  { label: 'Front', src: sprites.front_default },
+  { label: 'Back Default', src: sprites.back_default },
+];

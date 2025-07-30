@@ -26,7 +26,6 @@ export default function SearchPokemon() {
         const res = await fetch('https://pokeapi.co/api/v2/pokemon?limit=151');
         const data = await res.json();
         setAllPokemon(data.results);
-        console.log(allPokemon);
       } catch (error) {
         console.error('Failed to fetch Pokémon list:', error);
       } finally {

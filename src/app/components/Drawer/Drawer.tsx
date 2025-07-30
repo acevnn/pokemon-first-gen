@@ -1,9 +1,9 @@
-"use client";
+'use client';
 
-import React, { useEffect, useRef } from "react";
-import { useDrawer } from "./Drawer.hooks";
-import Link from "next/link";
-import { IconClose } from "public/assets/Icons/Close/Close";
+import React, { useEffect, useRef } from 'react';
+import { useDrawer } from './Drawer.hooks';
+import Link from 'next/link';
+import { IconClose } from '@/app/components/Icons/Close/Close';
 
 export interface DrawerProps {
   isOpen: boolean;
@@ -17,29 +17,24 @@ export function Drawer(props: DrawerProps) {
 
   useEffect(() => {
     function handleClickOutside(event: MouseEvent) {
-      if (
-        drawerRef.current &&
-        !drawerRef.current.contains(event.target as Node)
-      ) {
+      if (drawerRef.current && !drawerRef.current.contains(event.target as Node)) {
         toggleDrawer();
       }
     }
 
     if (isOpen) {
-      document.addEventListener("mousedown", handleClickOutside);
+      document.addEventListener('mousedown', handleClickOutside);
     } else {
-      document.removeEventListener("mousedown", handleClickOutside);
+      document.removeEventListener('mousedown', handleClickOutside);
     }
 
     return () => {
-      document.removeEventListener("mousedown", handleClickOutside);
+      document.removeEventListener('mousedown', handleClickOutside);
     };
   }, [isOpen, toggleDrawer]);
 
   return (
-    <div
-      ref={drawerRef}
-      className={`${classes.drawer} ${isOpen ? classes.drawerIsOpen : ""} ${!isOpen ? classes.drawerShadow : ""} `}>
+    <div ref={drawerRef} className={`${classes.drawer} ${isOpen ? classes.drawerIsOpen : ''} ${!isOpen ? classes.drawerShadow : ''} `}>
       <ul className={classes.drawerNavList}>
         <nav className={classes.drawerHeaderNav}>
           <Link href="/" onClick={toggleDrawer}>

@@ -4,12 +4,6 @@
   object-fit: cover;
 }
 
-.background-wrapper {
-  filter: blur(200px);
-  position: fixed;
-  z-index: -1;
-}
-
 .layout-wrapper {
   position: relative;
   min-height: 100vh;
