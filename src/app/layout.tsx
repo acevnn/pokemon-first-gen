@@ -30,7 +30,7 @@ export default function RootLayout({
     <html lang="en">
       <body>
         <BackgroundSVG />
-        <Image src={PokeCover} alt="Cover image of Pokémon" className={styles['image-cover']} priority />
+        <Image src={PokeCover} alt="Cover image of Pokémon" className={styles['image-cover']} priority unoptimized />
         <Header />
 
         <main className={`${styles['layout-wrapper']}`}>{children}</main>
