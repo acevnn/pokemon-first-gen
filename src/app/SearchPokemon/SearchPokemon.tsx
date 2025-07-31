@@ -3,6 +3,7 @@
 import React, { useEffect, useState } from 'react';
 import { useRouter } from 'next/navigation';
 import styles from './SearchPokemon.module.scss';
+import { useDebounce } from '@/app/hooks/useDebounce';
 
 interface PokemonResult {
   name: string;
@@ -16,6 +17,8 @@ export default function SearchPokemon() {
   const [loading, setLoading] = useState(false);
   const [showOptions, setShowOptions] = useState(false);
   const [toggleSearch, setToggleSearch] = useState(false);
+
+  const debouncedQuery = useDebounce(query, 300);
 
   const router = useRouter();
 
@@ -37,20 +40,17 @@ export default function SearchPokemon() {
   }, []);
 
   useEffect(() => {
-    if (!query.trim()) {
+    if (!debouncedQuery.trim()) {
       setFiltered([]);
       setShowOptions(false);
       return;
     }
 
-    console.log(query);
-
-    const matches = allPokemon.filter((poke) => poke.name.toLowerCase().startsWith(query.toLowerCase()));
-    console.log('this are the matches', matches);
+    const matches = allPokemon.filter((poke) => poke.name.toLowerCase().startsWith(debouncedQuery.toLowerCase()));
 
     setFiltered(matches.slice(0, 10));
     setShowOptions(true);
-  }, [query, allPokemon]);
+  }, [debouncedQuery, allPokemon]);
 
   function handleKeyDown(e: React.KeyboardEvent<HTMLInputElement>) {
     if (e.key === 'Enter' && filtered.length > 0) {
