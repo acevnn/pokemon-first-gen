@@ -77,9 +77,11 @@ export default function SearchPokemon() {
   }
 
   function handleBlurSearch() {
-    setToggleSearch(false);
-    setShowOptions(false);
-    setQuery('');
+    setTimeout(() => {
+      setToggleSearch(false);
+      setShowOptions(false);
+      setQuery('');
+    }, 150);
   }
 
   return (

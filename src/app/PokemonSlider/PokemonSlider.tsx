@@ -5,7 +5,7 @@ import { useState } from 'react';
 import { getImageBackVariants, getImageFrontVariants } from '@/utils/constants';
 import { PokemonSprites } from '@/types/pokemonTypes';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { A11y, Navigation, Pagination, Scrollbar } from 'swiper/modules';
+import { A11y, Navigation, Scrollbar } from 'swiper/modules';
 import Image from 'next/image';
 import styles from './PokemonSlider.module.scss';
 
@@ -22,36 +22,41 @@ export default function PokemonSlider({ sprites }: Props) {
   return (
     <>
       <Swiper
-        modules={[Navigation, Pagination, Scrollbar, A11y]}
+        modules={[Navigation, Scrollbar, A11y]}
         spaceBetween={50}
-        slidesPerView={3}
+        slidesPerView={1}
         navigation
         pagination={{ clickable: true }}
         scrollbar={{ draggable: true }}
+        className={styles['pokemon-slider']}
+        breakpoints={{
+          768: {
+            slidesPerView: 2,
+            spaceBetween: 30,
+          },
+          1024: {
+            slidesPerView: 3,
+            spaceBetween: 40,
+          },
+          1440: {
+            slidesPerView: 4,
+            spaceBetween: 50,
+          },
+        }}
       >
         {filteredImages.map((img, idx) => {
           return (
             <SwiperSlide key={idx}>
-              <div style={{ textAlign: 'center' }}>
-                <p style={{ fontWeight: 'bold', marginBottom: '8px' }}>{img.label}</p>
-                <Image
-                  src={img.src ?? ''}
-                  alt={img.label}
-                  width={150}
-                  height={150}
-                  style={{
-                    objectFit: 'contain',
-                    display: 'block',
-                    margin: '0 auto',
-                    maxHeight: '100%',
-                  }}
-                />
+              <div className={styles['pokemon-slider__content-wrapper']}>
+                <Image src={img.src ?? ''} alt={img.label} width={150} height={150} />
               </div>
+              <p className={styles['pokemon-slider__label']}>{img.label}</p>
             </SwiperSlide>
           );
         })}
       </Swiper>
-      <button className={styles.btn} onClick={() => setToggle((prev) => !prev)}>
+
+      <button className={styles['pokemon-slider__toggle-btn']} onClick={() => setToggle((prev) => !prev)}>
         {toggle ? 'Show Front View' : 'Show Back View'}
       </button>
     </>
