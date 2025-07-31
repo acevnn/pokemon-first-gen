@@ -4,7 +4,8 @@
   position: relative;
   min-width: 150px;
   display: flex;
-  justify-content: flex-end;
+  align-items: flex-end;
+  flex-direction: column;
 
   //&__input {
   //  padding: 8px 12px;
@@ -74,5 +75,9 @@
     margin-top: 4px;
     font-size: 14px;
     color: #aaa;
+  }
+
+  &__no-match-active {
+    opacity: 1;
   }
 }
