@@ -1,0 +1,25 @@
+.pokemon-slider {
+  padding-block: var(--spacing-5);
+  margin-bottom: var(--spacing-5);
+
+  &__content-wrapper {
+    display: flex;
+    justify-content: center;
+    padding: var(--spacing-6);
+  }
+
+
+  &__label {
+    text-align: center;
+  }
+
+  &__toggle-btn {
+    font: var(--font-preset-label-7);
+    background: #00ff9f;
+    color: purple;
+    outline: none;
+    border: 0;
+    border-radius: 8px;
+    padding: var(--spacing-3) var(--spacing-4);
+  }
+}
